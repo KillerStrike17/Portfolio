@@ -15,9 +15,9 @@ const Home = () => {
   ];
 
   const socialLinks = [
-    { icon: Linkedin, href: "https://linkedin.com/in/shubhamagnihotri", label: "LinkedIn" },
-    { icon: Github, href: "https://github.com/shubhamagnihotri", label: "GitHub" },
-    { icon: Youtube, href: "https://youtube.com/@shubhamagnihotri", label: "YouTube" },
+    { icon: Linkedin, href: "https://linkedin.com/in/shubhamagnihotri17", label: "LinkedIn" },
+    { icon: Github, href: "https://github.com/KillerStrike17", label: "GitHub" },
+    { icon: Youtube, href: "https://youtube.com/@beginningofinfinity", label: "YouTube" },
   ];
 
   const containerVariants = {
@@ -58,9 +58,9 @@ const Home = () => {
           "description": "Driving innovation through data science at IDFC First Bank. Passionate about sharing knowledge and building the future of AI.",
           "image": "https://shubhamagnihotri.dev/profile-image.jpg",
           "sameAs": [
-            "https://linkedin.com/in/shubhamagnihotri",
-            "https://github.com/shubhamagnihotri",
-            "https://youtube.com/@shubhamagnihotri"
+            "https://linkedin.com/in/shubhamagnihotri17",
+            "https://github.com/KillerStrike17",
+            "https://youtube.com/@beginningofinfinity"
           ],
           "worksFor": {
             "@type": "Organization",
@@ -143,10 +143,12 @@ const Home = () => {
           variants={itemVariants}
           className="flex flex-col gap-4 justify-center sm:flex-row"
         >
-          <Button size="lg" className="px-8 py-6 text-lg">
-            <Download className="mr-2" size={20} />
-            Download Resume
-          </Button>
+          <a href="https://drive.google.com/file/d/1GjgEwdGMQ-2YRdl4_YQy_CPSmALFEvvt/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+            <Button size="lg" className="px-8 py-6 text-lg">
+              <Download className="mr-2" size={20} />
+              Download Resume
+            </Button>
+          </a>
           <Button variant="outline" size="lg" className="px-8 py-6 text-lg">
             <Link to="/projects">View My Work</Link>
           </Button>

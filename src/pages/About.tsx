@@ -27,33 +27,36 @@ const About = () => {
       year: "2023-Present",
       company: "IDFC First Bank",
       role: "Senior Data Scientist",
-      location: "Mumbai, India",
+      location: "Mumbai, India (Hybrid)",
       achievements: [
-        "Led AI/ML initiatives for banking operations",
-        "Improved call analysis coverage to 80%",
-        "Reduced model training time by 3x"
+        "Promoted to lead a 7-member Data Science team, driving AI initiatives across document intelligence, fraud detection, and customer engagement.",
+        "Built an in-house OCR and VLM-based system, automating data extraction from 70+ financial documents, replacing third-party vendors, and saving ₹50 Cr annually.",
+        "Developed a VAE-based fraud detection framework and a GPT-4o + AWS Polly-powered customer simulation platform, cutting agent training time from 6 months to 1 month.",
+        "Automated agent quality evaluation across 150K+ monthly calls using Whisper, Deepgram, and GPT-4o, boosting sales by 20% and earning MD recognition on CNBC."
       ]
     },
     {
       year: "2021-2023",
-      company: "Arcadis",
-      role: "Data Scientist",
-      location: "Remote",
+      company: "S.AgriUdaan",
+      role: "CEO",
+      location: "Ahmedabad, India",
       achievements: [
-        "Developed AutoML Pipeline for infrastructure analytics",
-        "Implemented computer vision solutions",
-        "Mentored junior data scientists"
+        "Founded Gujarat’s first agriculture drone service company, pioneering precision farming with UAV-based pesticide spraying, seed scattering, and data-driven insights.",
+        "Designed a farmer-friendly marketplace platform, streamlining access to drone services and analytics, improving decision-making for 4,500+ farmers across 15,000+ acres.",
+        "Built and led a 15-member cross-functional team, executing operations across Gujarat, Madhya Pradesh, and Maharashtra with deep expertise in various crop types.",
+        "Forged partnerships with major agri-stakeholders including GoI, Adani, McCains, UPL, IFFCO, and earned the Times Gujarat Icon 2022 award for innovation in agriculture."
       ]
     },
     {
-      year: "2020-2021",
-      company: "S.AgriUdaan",
-      role: "ML Engineer",
-      location: "Ahmedabad, India",
+      year: "2019-2023",
+      company: "Arcadis",
+      role: "Data Scientist",
+      location: "Bangalore,India (Hybrid)",
       achievements: [
-        "Built agricultural prediction models",
-        "Deployed real-time analytics dashboard",
-        "Collaborated with farming communities"
+        "Built a low-latency RAG pipeline using GPT-4 and Langchain, achieving sub-3 second response time and 30% accuracy improvement across 1000+ documents.",
+        "Led the development of an Azure-powered Digital Twin for water utilities, detecting leaks and saving $1M/year per city while improving efficiency by 20%.",
+        "Engineered scalable automation solutions, including a YOLO-based object detection pipeline and Azure OCR workflow, collectively saving over $1.3M and 1.6L+ manual hours.",
+        "Chaired the India Chapter of the Data Science Community of Practice, training 500+ professionals through 30+ events, 10 sessions, and 3 hands-on workshops."
       ]
     }
   ];
@@ -79,7 +82,7 @@ const About = () => {
               "@type": "Organization",
               "name": "IDFC First Bank"
             },
-            "description": "A passionate data scientist and tech enthusiast with over 4 years of experience in building scalable AI/ML solutions."
+            "description": "A passionate data scientist and tech enthusiast with over 6+ years of experience in building scalable AI/ML solutions."
           }
         }}
       />
@@ -95,7 +98,7 @@ const About = () => {
             About Me
           </h1>
           <p className="mx-auto max-w-3xl text-xl leading-relaxed text-muted-foreground">
-            I'm a passionate data scientist and tech enthusiast with over 4 years of experience 
+            I'm a passionate data scientist and tech enthusiast with over 6+ years of experience 
             in building scalable AI/ML solutions. Currently driving innovation at IDFC First Bank 
             while actively contributing to the tech community through speaking and content creation.
           </p>
