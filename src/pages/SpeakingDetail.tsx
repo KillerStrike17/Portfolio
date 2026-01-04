@@ -34,6 +34,33 @@ interface Event {
 // Dummy data with extended fields for details page
 const eventsData: Event[] = [
   {
+    id: "devfest-bengaluru-2025",
+    title: "Devfest Bengaluru 2025",
+    event: "Google Developer Conference",
+    date: "December 6, 2025",
+    location: "Bengaluru, India",
+    audience: "1600+ attendees",
+    topic: "The Future of AI in Banking",
+    description: "Keynote presentation on implementing AI solutions in financial services and the challenges of ML model deployment at scale.",
+    image: "https://images.unsplash.com/photo-1500673922987-e212871fec22?w=500&h=300&fit=crop&crop=entropy&auto=format",
+    videoUrl: "https://youtube.com/watch?v=example1",
+    type: "Workshop",
+    images: [
+      { url: "https://images.unsplash.com/photo-1500673922987-e212871fec22?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "Main stage presentation" },
+      { url: "https://images.unsplash.com/photo-1591115765373-5207764f72e7?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "Audience engagement" },
+      { url: "https://images.unsplash.com/photo-1560523159-4a9692d222f9?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "Panel discussion" },
+      { url: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "Networking session" }
+    ],
+    fullDescription: "In this keynote presentation at TechShow London 2024, I explored the transformative potential of artificial intelligence in the banking sector. The talk covered practical implementation strategies for AI solutions in financial services, addressing key challenges in deploying machine learning models at scale. I discussed real-world case studies of successful AI integration in banking operations, risk assessment, and customer service. The presentation also addressed important considerations around data privacy, regulatory compliance, and ethical AI development in the financial industry. The session concluded with a forward-looking perspective on how AI will continue to reshape banking in the next decade, with practical takeaways for financial institutions at different stages of their AI journey.",
+    highlights: [
+      "Presented to an audience of 500+ banking and fintech professionals",
+      "Demonstrated practical AI implementation strategies for financial services",
+      "Addressed regulatory and compliance considerations for AI in banking",
+      "Showcased case studies of successful ML model deployment at scale",
+      "Facilitated Q&A session with industry leaders"
+    ]
+  },
+  {
     id: "techshow-london-2024",
     title: "TechShow London 2024",
     event: "International Tech Conference",

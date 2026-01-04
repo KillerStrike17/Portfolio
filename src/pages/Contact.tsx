@@ -36,8 +36,8 @@ const Contact = () => {
     {
       icon: Mail,
       label: "Email",
-      value: "shubham.agnihotri@example.com",
-      href: "mailto:shubham.agnihotri@example.com"
+      value: "shubham.agnihotri1997@gmail.com",
+      href: "mailto:shubham.agnihotri1997@gmail.com"
     },
     {
       icon: MapPin,
@@ -45,31 +45,31 @@ const Contact = () => {
       value: "Mumbai, India",
       href: null
     },
-    {
-      icon: Phone,
-      label: "Phone",
-      value: "+91 98765 43210",
-      href: "tel:+919876543210"
-    }
+    // {
+    //   icon: Phone,
+    //   label: "Phone",
+    //   value: "+91 98765 43210",
+    //   href: "tel:+919876543210"
+    // }
   ];
 
   const socialLinks = [
     {
       icon: Linkedin,
       label: "LinkedIn",
-      href: "https://linkedin.com/in/shubhamagnihotri",
+      href: "https://linkedin.com/in/shubhamagnihotri17",
       color: "hover:text-blue-600"
     },
     {
       icon: Github,
       label: "GitHub", 
-      href: "https://github.com/shubhamagnihotri",
+      href: "https://github.com/KillerStrike17",
       color: "hover:text-gray-600"
     },
     {
       icon: Youtube,
       label: "YouTube",
-      href: "https://youtube.com/@shubhamagnihotri",
+      href: "https://youtube.com/@beginningofinfinity",
       color: "hover:text-red-600"
     }
   ];
