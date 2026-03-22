@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { Calendar, MapPin, Users, Video, ArrowLeft, ChevronLeft, ChevronRight, Maximize2, X, ZoomIn } from 'lucide-react';
+import { Calendar, MapPin, Users, Video, ArrowLeft, ChevronLeft, ChevronRight, X, ZoomIn, FileText } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import SEO from '../components/SEO';
 import { useParams, useNavigate, Link } from 'react-router-dom';
@@ -25,201 +25,404 @@ interface Event {
   description: string;
   image: string;
   videoUrl: string;
+  slidesUrl: string;
   type: string;
   images: EventImage[];
   fullDescription: string;
   highlights: string[];
 }
 
-// Dummy data with extended fields for details page
 const eventsData: Event[] = [
   {
-    id: "devfest-bengaluru-2025",
-    title: "Devfest Bengaluru 2025",
-    event: "Google Developer Conference",
-    date: "December 6, 2025",
-    location: "Bengaluru, India",
-    audience: "1600+ attendees",
-    topic: "The Future of AI in Banking",
-    description: "Keynote presentation on implementing AI solutions in financial services and the challenges of ML model deployment at scale.",
+    id: "cloud8-summit-2026",
+    title: "Cloud8 Summit 2026",
+    event: "Cloud8 Developer Conference",
+    date: "January 16, 2026",
+    location: "India",
+    audience: "1000+ developers",
+    topic: "The Graph Awakens: Uniting Neo4j and Google's A2A Protocol",
+    description: "A deep dive into combining Neo4j graph databases with Google's A2A protocol for interconnected multi-agent systems.",
     image: "https://images.unsplash.com/photo-1500673922987-e212871fec22?w=500&h=300&fit=crop&crop=entropy&auto=format",
-    videoUrl: "https://youtube.com/watch?v=example1",
-    type: "Workshop",
-    images: [
-      { url: "https://images.unsplash.com/photo-1500673922987-e212871fec22?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "Main stage presentation" },
-      { url: "https://images.unsplash.com/photo-1591115765373-5207764f72e7?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "Audience engagement" },
-      { url: "https://images.unsplash.com/photo-1560523159-4a9692d222f9?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "Panel discussion" },
-      { url: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "Networking session" }
-    ],
-    fullDescription: "In this keynote presentation at TechShow London 2024, I explored the transformative potential of artificial intelligence in the banking sector. The talk covered practical implementation strategies for AI solutions in financial services, addressing key challenges in deploying machine learning models at scale. I discussed real-world case studies of successful AI integration in banking operations, risk assessment, and customer service. The presentation also addressed important considerations around data privacy, regulatory compliance, and ethical AI development in the financial industry. The session concluded with a forward-looking perspective on how AI will continue to reshape banking in the next decade, with practical takeaways for financial institutions at different stages of their AI journey.",
-    highlights: [
-      "Presented to an audience of 500+ banking and fintech professionals",
-      "Demonstrated practical AI implementation strategies for financial services",
-      "Addressed regulatory and compliance considerations for AI in banking",
-      "Showcased case studies of successful ML model deployment at scale",
-      "Facilitated Q&A session with industry leaders"
-    ]
-  },
-  {
-    id: "techshow-london-2024",
-    title: "TechShow London 2024",
-    event: "International Tech Conference",
-    date: "March 15, 2024",
-    location: "London, UK",
-    audience: "500+ attendees",
-    topic: "The Future of AI in Banking",
-    description: "Keynote presentation on implementing AI solutions in financial services and the challenges of ML model deployment at scale.",
-    image: "https://images.unsplash.com/photo-1500673922987-e212871fec22?w=500&h=300&fit=crop&crop=entropy&auto=format",
-    videoUrl: "https://youtube.com/watch?v=example1",
-    type: "Keynote",
-    images: [
-      { url: "https://images.unsplash.com/photo-1500673922987-e212871fec22?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "Main stage presentation" },
-      { url: "https://images.unsplash.com/photo-1591115765373-5207764f72e7?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "Audience engagement" },
-      { url: "https://images.unsplash.com/photo-1560523159-4a9692d222f9?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "Panel discussion" },
-      { url: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "Networking session" }
-    ],
-    fullDescription: "In this keynote presentation at TechShow London 2024, I explored the transformative potential of artificial intelligence in the banking sector. The talk covered practical implementation strategies for AI solutions in financial services, addressing key challenges in deploying machine learning models at scale. I discussed real-world case studies of successful AI integration in banking operations, risk assessment, and customer service. The presentation also addressed important considerations around data privacy, regulatory compliance, and ethical AI development in the financial industry. The session concluded with a forward-looking perspective on how AI will continue to reshape banking in the next decade, with practical takeaways for financial institutions at different stages of their AI journey.",
-    highlights: [
-      "Presented to an audience of 500+ banking and fintech professionals",
-      "Demonstrated practical AI implementation strategies for financial services",
-      "Addressed regulatory and compliance considerations for AI in banking",
-      "Showcased case studies of successful ML model deployment at scale",
-      "Facilitated Q&A session with industry leaders"
-    ]
-  },
-  {
-    id: "tensorflow-everywhere-india",
-    title: "TensorFlow Everywhere India",
-    event: "Google Developer Conference",
-    date: "January 20, 2024",
-    location: "Mumbai, India",
-    audience: "300+ developers",
-    topic: "Scaling ML with TensorFlow Extended",
-    description: "Technical workshop on building production-ready ML pipelines using TensorFlow Extended (TFX) and best practices for MLOps.",
-    image: "https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=500&h=300&fit=crop&crop=entropy&auto=format",
-    videoUrl: "https://youtube.com/watch?v=example2",
-    type: "Workshop",
-    images: [
-      { url: "https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "Workshop session" },
-      { url: "https://images.unsplash.com/photo-1558403194-611308249627?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "Live coding demonstration" },
-      { url: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "Hands-on practice" },
-      { url: "https://images.unsplash.com/photo-1529070538774-1843cb3265df?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "Q&A session" }
-    ],
-    fullDescription: "At TensorFlow Everywhere India, I led an intensive technical workshop focused on building production-ready machine learning pipelines using TensorFlow Extended (TFX). The workshop was designed for intermediate to advanced developers looking to move beyond model training to full MLOps implementation. Participants learned how to build robust, scalable, and maintainable ML pipelines that can handle real-world data and deployment challenges. The session covered data validation, feature engineering, model training, evaluation, and serving components of TFX. We also explored best practices for continuous integration, continuous delivery, and monitoring of ML systems. The workshop included hands-on coding exercises where participants implemented their own TFX pipelines and deployed them to production-like environments.",
-    highlights: [
-      "Conducted a 3-hour hands-on workshop for 300+ developers",
-      "Demonstrated end-to-end ML pipeline development with TensorFlow Extended",
-      "Covered advanced MLOps practices including model monitoring and continuous delivery",
-      "Provided code templates and resources for participants to use in their own projects",
-      "Received 4.8/5 rating from workshop attendees"
-    ]
-  },
-  {
-    id: "devfest-ahmedabad-2023",
-    title: "DevFest Ahmedabad 2023",
-    event: "Google Developer Groups",
-    date: "November 12, 2023",
-    location: "Ahmedabad, India",
-    audience: "400+ developers",
-    topic: "Building Ethical AI Systems",
-    description: "Panel discussion on responsible AI development, bias mitigation, and the importance of ethical considerations in machine learning.",
-    image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=500&h=300&fit=crop&crop=entropy&auto=format",
-    videoUrl: "https://youtube.com/watch?v=example3",
-    type: "Panel",
-    images: [
-      { url: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "Panel discussion" },
-      { url: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "Audience Q&A" },
-      { url: "https://images.unsplash.com/photo-1560523159-6cd9d6165076?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "Speaker introduction" },
-      { url: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "Post-panel networking" }
-    ],
-    fullDescription: "At DevFest Ahmedabad 2023, I participated in a thought-provoking panel discussion on the critical topic of ethical AI development. Alongside experts from academia and industry, we explored the multifaceted challenges of building AI systems that are not only technically sound but also fair, transparent, and responsible. The panel addressed practical approaches to bias mitigation in machine learning models, techniques for improving model explainability, and frameworks for ethical decision-making in AI development. We discussed real-world case studies where AI systems had unintended consequences and how these situations could have been prevented through better ethical practices. The session also covered regulatory considerations and the importance of diverse teams in building more inclusive AI systems. The panel concluded with actionable recommendations for developers to incorporate ethical considerations throughout the AI development lifecycle.",
-    highlights: [
-      "Participated in panel with leading AI ethics experts from Google, Microsoft, and local universities",
-      "Discussed practical approaches to bias detection and mitigation in ML models",
-      "Shared frameworks for ethical decision-making in AI development",
-      "Addressed questions from 400+ developers on implementing responsible AI practices",
-      "Contributed to DevFest's focus on building technology for social good"
-    ]
-  },
-  {
-    id: "aws-community-day",
-    title: "AWS Community Day",
-    event: "AWS User Group",
-    date: "September 8, 2023",
-    location: "Bangalore, India",
-    audience: "250+ cloud enthusiasts",
-    topic: "Serverless ML on AWS",
-    description: "Deep dive into building serverless machine learning applications using AWS Lambda, SageMaker, and other AWS services.",
-    image: "https://images.unsplash.com/photo-1470813740244-df37b8c1edcb?w=500&h=300&fit=crop&crop=entropy&auto=format",
-    videoUrl: "https://youtube.com/watch?v=example4",
+    videoUrl: "",
+    slidesUrl: "https://docs.google.com/presentation/d/19TYkMa9-LyvhlVZVA_pkKfdvo3HqmGwpkOOK2fvaOmE/edit?usp=sharing",
     type: "Technical Talk",
     images: [
-      { url: "https://images.unsplash.com/photo-1470813740244-df37b8c1edcb?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "Technical presentation" },
-      { url: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "Architecture diagram explanation" },
-      { url: "https://images.unsplash.com/photo-1558403194-611308249627?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "Live demo" },
-      { url: "https://images.unsplash.com/photo-1559223607-a43c990c692c?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "Audience interaction" }
+      { url: "https://images.unsplash.com/photo-1500673922987-e212871fec22?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "Main stage presentation" },
+      { url: "https://images.unsplash.com/photo-1591115765373-5207764f72e7?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "Audience engagement" },
+      { url: "https://images.unsplash.com/photo-1560523159-4a9692d222f9?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "Technical demo" },
+      { url: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "Networking session" }
     ],
-    fullDescription: "At AWS Community Day in Bangalore, I delivered a comprehensive technical talk on building serverless machine learning applications using AWS services. The session focused on architecting end-to-end ML solutions that leverage AWS Lambda for preprocessing and inference, Amazon SageMaker for model training and deployment, and other AWS services for a complete serverless ML pipeline. I demonstrated how to build cost-effective, scalable, and maintainable ML systems without managing infrastructure. The talk included detailed architecture patterns, best practices for serverless ML, and considerations for production deployments. Through live coding demonstrations, I showed how to implement real-time inference endpoints, batch processing jobs, and automated retraining pipelines. The session also covered monitoring, logging, and debugging strategies specific to serverless ML applications on AWS. Attendees left with practical knowledge they could immediately apply to their own cloud ML projects.",
+    fullDescription: "At Cloud8 Summit 2026, I presented 'The Graph Awakens' — a session exploring how Neo4j graph databases and Google's Agent-to-Agent (A2A) protocol can be united to build powerful multi-agent systems with graph-powered knowledge. The talk covered what AI agents are, why graph databases like Neo4j are essential for modeling real-world connected data, and how the A2A protocol enables standardized communication between autonomous agents. I walked through the A2A protocol's core components: Agent Cards for capability discovery, Messages for HTTPS-based inter-agent communication, and Task lifecycle management. The session also included a live demo showing Neo4j's Cypher query language and the Neo4j Sandbox, combined with A2A agents collaborating across services. The audience learned how to architect interconnected agent systems that leverage the power of graph relationships for richer, more contextual AI reasoning.",
     highlights: [
-      "Presented to 250+ AWS practitioners and cloud architects",
-      "Demonstrated end-to-end serverless ML architecture patterns",
-      "Conducted live coding of AWS Lambda functions for ML preprocessing and inference",
-      "Shared cost optimization strategies for ML workloads on AWS",
-      "Provided reference architecture templates for common ML use cases"
+      "Presented to 1000+ developers at a major cloud conference",
+      "Demonstrated the synergy between Neo4j graph databases and Google's A2A protocol",
+      "Covered agent discovery via Agent Cards, message-based communication, and task execution",
+      "Live demo using Neo4j Sandbox with Cypher queries and A2A multi-agent collaboration",
+      "Explained practical use cases for graph-powered agent systems in real-world applications"
     ]
   },
   {
-    id: "pydata-mumbai-meetup",
-    title: "PyData Mumbai Meetup",
-    event: "Python Data Science Community",
-    date: "July 15, 2023",
+    id: "devfest-bangalore-2025",
+    title: "Devfest Bangalore 2025",
+    event: "Google Developer Conference",
+    date: "December 6, 2025",
+    location: "Bangalore, India",
+    audience: "1600+ developers",
+    topic: "The Graph Awakens: Uniting Neo4j and Google's A2A Protocol",
+    description: "Exploring Neo4j graph databases and Google's A2A protocol for interconnected AI agent systems.",
+    image: "https://images.unsplash.com/photo-1500673922987-e212871fec22?w=500&h=300&fit=crop&crop=entropy&auto=format",
+    videoUrl: "",
+    slidesUrl: "https://docs.google.com/presentation/d/19TYkMa9-LyvhlVZVA_pkKfdvo3HqmGwpkOOK2fvaOmE/edit?usp=sharing",
+    type: "Workshop",
+    images: [
+      { url: "https://images.unsplash.com/photo-1500673922987-e212871fec22?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "Devfest stage" },
+      { url: "https://images.unsplash.com/photo-1591115765373-5207764f72e7?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "Audience interaction" },
+      { url: "https://images.unsplash.com/photo-1560523159-4a9692d222f9?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "Live coding demo" },
+      { url: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "Q&A session" }
+    ],
+    fullDescription: "At Google Devfest Bangalore 2025, I delivered 'The Graph Awakens' — connecting Neo4j graph databases with Google's A2A protocol. The presentation explored how graph databases model real-world connected data far better than traditional relational databases, and how the A2A protocol provides a standardized framework for AI agents to communicate, discover each other's capabilities, and collaborate on tasks. The session covered the full A2A architecture: Agent Cards (agent.json) for capability discovery, HTTPS-based message communication, task lifecycle management (submitted → working → completed), and multi-modal support. I also introduced Neo4j fundamentals including the Cypher query language and demonstrated the Neo4j Sandbox. The talk concluded with a live demo showing multiple A2A agents collaborating using graph-powered knowledge bases.",
+    highlights: [
+      "Delivered to 1600+ developers at Google's flagship developer event in Bangalore",
+      "Explained graph database advantages for modeling complex, interconnected AI knowledge",
+      "Walked through the complete A2A protocol architecture with practical examples",
+      "Demonstrated Neo4j Cypher queries and sandbox environment",
+      "Live multi-agent demo showing A2A communication with graph-powered context"
+    ]
+  },
+  {
+    id: "gitex-global-dubai-2025",
+    title: "GITEX Global 2025",
+    event: "Gitex Global Conference",
+    date: "October 16, 2025",
+    location: "Dubai",
+    audience: "2,00,000+ delegates",
+    topic: "Mastering Google's A2A Protocol: Connecting AI Agents Seamlessly",
+    description: "Comprehensive session on Google's A2A protocol — agent cards, capability discovery, and multi-agent collaboration.",
+    image: "https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=500&h=300&fit=crop&crop=entropy&auto=format",
+    videoUrl: "",
+    slidesUrl: "https://docs.google.com/presentation/d/15bbvQ0sioVpppUWoSWrD_TZ5j3cs8SM-i4PqicvfzsM/edit?usp=sharing",
+    type: "Workshop",
+    images: [
+      { url: "https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "GITEX Global stage" },
+      { url: "https://images.unsplash.com/photo-1558403194-611308249627?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "Technical presentation" },
+      { url: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "Agent architecture demo" },
+      { url: "https://images.unsplash.com/photo-1529070538774-1843cb3265df?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "Audience Q&A" }
+    ],
+    fullDescription: "At GITEX Global 2025 in Dubai — the world's largest tech conference — I presented 'Mastering Google's A2A Protocol: Connecting AI Agents Seamlessly.' The talk began by defining what AI agents are and contrasting AI workflows (structured, deterministic pipelines) with Agentic workflows (autonomous systems where AI decides next steps). I then deep-dived into the A2A protocol: why it's needed (illustrated with a movie-booking multi-agent scenario), how it replaces fragmented API integrations with standardized HTTPS-based communication, and its core components — Agent Cards for discovery, Messages for communication, and Tasks for execution. The session also covered A2A vs MCP (Model Context Protocol) comparison, helping developers understand when to use each. The presentation was tailored for the massive international audience, emphasizing cross-framework agent interoperability and real-world deployment patterns.",
+    highlights: [
+      "Presented at the world's largest tech conference with 200,000+ delegates",
+      "Contrasted AI workflows vs. Agentic workflows with clear decision frameworks",
+      "Deep-dived into A2A protocol: Agent Cards, Messages, Tasks, and execution lifecycle",
+      "Compared A2A vs MCP protocols to help developers choose the right approach",
+      "Used real-world multi-agent scenarios (movie booking, cab booking) to illustrate concepts"
+    ]
+  },
+  {
+    id: "acd-mumbai-2025",
+    title: "AWS Community Day Mumbai 2025",
+    event: "AWS Developer Conference",
+    date: "October 11, 2025",
     location: "Mumbai, India",
-    audience: "150+ data scientists",
+    audience: "500+ developers",
+    topic: "Orchestrating Financial Document Intelligence: Agentic AI Workflows with AWS Bedrock & Step Functions",
+    description: "Transforming manual document chaos in fintech into autonomous agentic AI workflows using AWS services.",
+    image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=500&h=300&fit=crop&crop=entropy&auto=format",
+    videoUrl: "https://www.youtube.com/watch?v=dM5l7J0a478",
+    slidesUrl: "https://docs.google.com/presentation/d/1pCS4o4xWdilztbqMHZLrtPjG885G-YnMdAYo8nXRQvs/edit?usp=sharing",
+    type: "Technical Talk",
+    images: [
+      { url: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "AWS Community Day stage" },
+      { url: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "Architecture walkthrough" },
+      { url: "https://images.unsplash.com/photo-1560523159-6cd9d6165076?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "Live demo" },
+      { url: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "Q&A session" }
+    ],
+    fullDescription: "At AWS Community Day Mumbai 2025, I co-presented 'Orchestrating Financial Document Intelligence' — addressing the massive problem of manual document processing in financial services. Banks face slow approval cycles, error-prone data entry, compliance gaps, and high operational costs when handling KYC forms, loan agreements, bank statements, and invoices. The talk presented a solution using Agentic AI workflows on AWS: Amazon Bedrock Agents for specialized intelligence (an Extractor agent using Textract for data extraction, and a Validator agent for business logic), AWS Step Functions for workflow orchestration (sequencing, error handling, branching logic), and a complete security layer for data protection and compliance. I demonstrated end-to-end automation of a KYC bundle processing workflow — from document ingestion through S3, intelligent extraction, validation, to automated decision-making and routing. The talk showed how this approach replaces third-party vendors and saves significant operational costs.",
+    highlights: [
+      "Co-presented with Ekta Shah to 500+ AWS developers in Mumbai",
+      "Addressed the  Rs.50Cr+ document processing cost problem in financial services",
+      "Demonstrated Agentic architecture: Extractor and Validator agents on AWS Bedrock",
+      "Showed AWS Step Functions orchestration with branching logic and error handling",
+      "Live demo of automated KYC bundle processing from ingestion to decision-making"
+    ]
+  },
+  {
+    id: "cypher-bengaluru-2025",
+    title: "AIM Cypher Bengaluru 2025",
+    event: "Analytics India Magazine National Developer Conference",
+    date: "September 18, 2025",
+    location: "Bengaluru, India",
+    audience: "5000+ developers",
+    topic: "Mastering Google's A2A Protocol: Deep Dive",
+    description: "In-depth exploration of Google's A2A protocol, covering agents, agent cards, MCP, and real-world examples.",
+    image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=500&h=300&fit=crop&crop=entropy&auto=format",
+    videoUrl: "",
+    slidesUrl: "https://docs.google.com/presentation/d/1B1uxa0tAMKIxNanHQLSnwB3vI6S1RTP0YmYDPgpn1zw/edit?usp=sharing",
+    type: "Technical Talk",
+    images: [
+      { url: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "AIM Cypher keynote stage" },
+      { url: "https://images.unsplash.com/photo-1591115765373-5207764f72e7?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "Protocol architecture explanation" },
+      { url: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "A2A vs MCP comparison" },
+      { url: "https://images.unsplash.com/photo-1559223607-a43c990c692c?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "Live examples demonstration" }
+    ],
+    fullDescription: "At AIM Cypher Bengaluru 2025 — one of India's largest analytics and AI conferences with 5000+ developers — I delivered a deep-dive session on Google's A2A protocol. The talk started with a clear distinction between AI workflows (structured pipelines with fixed steps) and Agentic workflows (autonomous systems where AI decides next steps). I then covered the complete A2A protocol stack: why standardized agent communication is needed, Agent Cards (agent.json) for capability discovery, Messages for HTTPS-based communication between agents, and Task execution lifecycle. A significant portion of the talk was dedicated to comparing A2A with Model Context Protocol (MCP) — explaining when to use each, their complementary nature, and architectural differences. The session concluded with real-world examples demonstrating how A2A agents can be composed to solve complex multi-step problems across different frameworks and providers.",
+    highlights: [
+      "Presented to 5000+ developers at India's premier analytics conference",
+      "Distinguished AI workflows vs. Agentic workflows with practical comparisons",
+      "Complete A2A protocol deep-dive: Agent Cards, Messages, Tasks, and execution",
+      "Detailed comparison of A2A vs MCP with clear decision guidance",
+      "Real-world examples of cross-framework multi-agent systems using A2A"
+    ]
+  },
+  {
+    id: "cloud-community-day-bengaluru-2025",
+    title: "Google Cloud Community Day Bengaluru 2025",
+    event: "Google Developer Conference",
+    date: "August 23, 2025",
+    location: "Bengaluru, India",
+    audience: "1000+ developers",
+    topic: "Mastering Google's A2A Protocol: Connecting AI Agents",
+    description: "Hands-on session on A2A protocol covering agent cards, HTTPS communication, and live agent demos.",
+    image: "https://images.unsplash.com/photo-1470813740244-df37b8c1edcb?w=500&h=300&fit=crop&crop=entropy&auto=format",
+    videoUrl: "",
+    slidesUrl: "https://docs.google.com/presentation/d/1FQtPobhvoI5ZHFyTCCW-rDezRjqRR_TPUrhiWy1dr1g/edit?usp=sharing",
+    type: "Technical Talk",
+    images: [
+      { url: "https://images.unsplash.com/photo-1470813740244-df37b8c1edcb?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "Cloud Community Day stage" },
+      { url: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "A2A architecture diagram" },
+      { url: "https://images.unsplash.com/photo-1558403194-611308249627?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "Live coding demo" },
+      { url: "https://images.unsplash.com/photo-1559223607-a43c990c692c?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "Developer networking" }
+    ],
+    fullDescription: "At Google Cloud Community Day Bengaluru 2025, I presented 'Mastering Google's A2A Protocol' — a focused, hands-on session on connecting AI agents using standardized communication. The talk covered the A2A protocol's motivation (replacing fragmented agent APIs), its core architecture components — Agent Cards for self-describing agent capabilities, HTTPS-based Messages for inter-agent communication (including message structure with roles, parts, and task/context IDs), and the Task lifecycle from submission to completion. I demonstrated using practical scenarios: a multi-agent movie and cab booking system where agents discover each other through Agent Cards, communicate via standardized messages, and coordinate task execution. The session included live coding of an AgentExecutor class showing how to implement agents that conform to the A2A protocol. Developers left with a clear understanding of how to build A2A-compliant agents.",
+    highlights: [
+      "Presented to 1000+ Google Cloud developers in Bengaluru",
+      "Focused on practical implementation of A2A protocol agents",
+      "Walked through Agent Card structure (agent.json) with real examples",
+      "Live demo of multi-agent communication and task coordination",
+      "Showed code implementation of AgentExecutor class for A2A agents"
+    ]
+  },
+  {
+    id: "cloud-community-day-mumbai-2025",
+    title: "Google Cloud Community Day Mumbai 2025",
+    event: "Google Developer Conference",
+    date: "June 14, 2025",
+    location: "Mumbai, India",
+    audience: "700+ developers",
+    topic: "Unlocking Customer Insights: AI-Powered Conversation Intelligence for Banks",
+    description: "Building an AI-powered conversation intelligence pipeline using Google Audio Suite, Vertex AI, Gemini, and Neo4j.",
+    image: "https://images.unsplash.com/photo-1470813740244-df37b8c1edcb?w=500&h=300&fit=crop&crop=entropy&auto=format",
+    videoUrl: "",
+    slidesUrl: "https://docs.google.com/presentation/d/1UKYK8aztWO717Ryt4-1_gKiAe-beUUIChPBtHYlfFkQ/edit?usp=sharing",
+    type: "Technical Talk",
+    images: [
+      { url: "https://images.unsplash.com/photo-1470813740244-df37b8c1edcb?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "Community Day presentation" },
+      { url: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "Pipeline architecture" },
+      { url: "https://images.unsplash.com/photo-1558403194-611308249627?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "Data flow demonstration" },
+      { url: "https://images.unsplash.com/photo-1559223607-a43c990c692c?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "Audience interaction" }
+    ],
+    fullDescription: "At Google Cloud Community Day Mumbai 2025, I presented 'Unlocking Customer Insights' — a comprehensive session on building AI-powered conversation intelligence for the banking industry. The talk opened with staggering industry statistics: banks handle 3.75 million calls per center annually, $1.4 billion in revenue is lost to poor service, and 56% of customers end relationships due to bad experiences. I then presented a complete end-to-end pipeline: Call Ingestion (via Pub/Sub, Kafka), Transcription with speaker diarization (Google Speech-to-Text), Sentiment & Emotion Extraction, Intent & Feature Extraction (using Gemini for data extraction and score calculation), storage in Neo4j graph database (capturing customer, intent, features, sentiments, and agent information), and finally Dashboards & Alerts for real-time monitoring. The talk emphasized how this system enables agent coaching, automated quality evaluation, and actionable customer insights — turning call center operations from a cost center into a strategic advantage for customer retention.",
+    highlights: [
+      "Presented to 700+ developers at Google Cloud Community Day Mumbai",
+      "Showcased real industry data: $1.4B revenue loss from poor banking service",
+      "Demonstrated end-to-end pipeline: ingestion → transcription → analysis → dashboards",
+      "Used Google Speech-to-Text, Gemini, Vertex AI, and Neo4j in the architecture",
+      "Showed how conversation intelligence drives 90% customer retention improvements"
+    ]
+  },
+  {
+    id: "asia-tech-x-singapore-techxlr8-asia-2025",
+    title: "TechXLR8 Asia — AsiaTechXSingapore 2025",
+    event: "AsiaTechXSingapore 2025",
+    date: "May 27, 2025",
+    location: "Singapore",
+    audience: "40,000+ delegates",
     topic: "AutoML: Democratizing Machine Learning",
     description: "Presentation on automated machine learning tools and techniques to make ML accessible to non-experts.",
     image: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=500&h=300&fit=crop&crop=entropy&auto=format",
-    videoUrl: "https://youtube.com/watch?v=example5",
-    type: "Meetup Talk",
+    videoUrl: "",
+    slidesUrl: "",
+    type: "Panel Discussion",
     images: [
-      { url: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "Meetup presentation" },
-      { url: "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "Tool demonstration" },
-      { url: "https://images.unsplash.com/photo-1591115765373-5207764f72e7?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "Interactive session" },
-      { url: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "Community networking" }
+      { url: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "Panel stage at TechXLR8" },
+      { url: "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "Panel discussion" },
+      { url: "https://images.unsplash.com/photo-1591115765373-5207764f72e7?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "Audience Q&A" },
+      { url: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "Networking" }
     ],
-    fullDescription: "At the PyData Mumbai Meetup, I presented on the rapidly evolving field of Automated Machine Learning (AutoML) and its potential to democratize ML by making it accessible to non-experts. The talk began with an overview of the current AutoML landscape, covering both open-source tools like Auto-sklearn and TPOT, and commercial platforms like Google AutoML and Amazon SageMaker Autopilot. I demonstrated how these tools automate various aspects of the ML pipeline, including feature engineering, model selection, hyperparameter tuning, and ensemble building. Through practical examples, I showed how domain experts with limited ML experience can leverage AutoML to build effective models for their specific use cases. The presentation also addressed the limitations of current AutoML approaches and when traditional, manual ML development might still be necessary. The session concluded with a discussion on the future of AutoML and its potential impact on the data science profession. Attendees participated in a hands-on exercise using an open-source AutoML library to solve a real-world problem.",
+    fullDescription: "At TechXLR8 Asia — part of AsiaTechXSingapore 2025, one of Asia's largest tech conferences with 40,000+ delegates — I served as Moderator for a panel discussion on AI and Agentic Systems in Industry. The panel explored the current state of AI agents, how agentic workflows are transforming enterprise operations, and the practical challenges of deploying autonomous AI systems across industries including finance, healthcare, and logistics. As moderator, I guided the conversation through key topics: the distinction between traditional AI automation and truly agentic systems, the role of emerging protocols like A2A and MCP in enabling agent interoperability, security and governance considerations, and future predictions for autonomous AI in the enterprise. The panel featured industry leaders sharing real-world deployment experiences and lessons learned.",
     highlights: [
-      "Introduced AutoML concepts and tools to 150+ data science practitioners",
-      "Compared performance of various AutoML frameworks on benchmark datasets",
-      "Demonstrated AutoML workflow integration into existing data science pipelines",
-      "Facilitated discussion on ethical considerations in automated decision-making",
-      "Shared practical tips for when and how to effectively use AutoML tools"
+      "Moderated panel at Asia's largest tech conference with 40,000+ delegates",
+      "Featured industry leaders discussing real-world AI agent deployments",
+      "Explored the evolution from AI automation to truly autonomous agentic systems",
+      "Discussed security, governance, and enterprise readiness for agentic AI",
+      "Covered cross-industry perspectives: finance, healthcare, and logistics"
     ]
   },
   {
-    id: "data-science-conference",
-    title: "Data Science Conference",
-    event: "National Analytics Summit",
-    date: "May 22, 2023",
-    location: "Delhi, India",
-    audience: "600+ professionals",
-    topic: "MLOps: From Model to Production",
-    description: "Comprehensive overview of MLOps practices, including model versioning, monitoring, and continuous deployment strategies.",
-    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=500&h=300&fit=crop&crop=entropy&auto=format",
-    videoUrl: "https://youtube.com/watch?v=example6",
-    type: "Conference Talk",
+    id: "asia-tech-x-singapore-developerxperience-summit-2025",
+    title: "DeveloperXperience Summit — AsiaTechXSingapore 2025",
+    event: "AsiaTechXSingapore 2025",
+    date: "May 27, 2025",
+    location: "Singapore",
+    audience: "40,000+ delegates",
+    topic: "AutoML: Democratizing Machine Learning",
+    description: "Presentation on automated machine learning tools and techniques to make ML accessible to non-experts.",
+    image: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=500&h=300&fit=crop&crop=entropy&auto=format",
+    videoUrl: "",
+    slidesUrl: "",
+    type: "Panel Discussion",
     images: [
-      { url: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "Conference presentation" },
-      { url: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "MLOps architecture diagram" },
-      { url: "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "Live demonstration" },
+      { url: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "DeveloperXperience Summit stage" },
+      { url: "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "Panel participants" },
+      { url: "https://images.unsplash.com/photo-1591115765373-5207764f72e7?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "Discussion in progress" },
+      { url: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "Post-panel networking" }
+    ],
+    fullDescription: "At the DeveloperXperience Summit — part of AsiaTechXSingapore 2025 — I participated as a Panelist in a discussion on Developer Experience and AI Innovation. The panel explored how AI-powered tools and agentic systems are fundamentally reshaping the developer experience: from AI-assisted code generation and automated testing to intelligent debugging and autonomous deployment pipelines. I shared insights from my experience at IDFC First Bank on how internal developer tools powered by AI can dramatically reduce development cycles and improve code quality. The discussion also covered emerging protocols and frameworks that enable seamless integration of AI agents into development workflows, and the balance between developer autonomy and AI assistance. Panelists debated the future of software development — whether AI agents will serve as assistants or collaborators — and practical strategies for adopting AI-first development practices.",
+    highlights: [
+      "Panelist at Asia's premier developer experience summit",
+      "Discussed AI-powered development tools and their impact on developer productivity",
+      "Shared real-world insights on AI-assisted workflows at IDFC First Bank",
+      "Explored the role of emerging protocols in developer tooling integration",
+      "Debated the future of AI-human collaboration in software development"
+    ]
+  },
+  {
+    id: "acd-bengaluru-2025",
+    title: "AWS Community Day Bengaluru 2025",
+    event: "AWS Developer Conference",
+    date: "May 23, 2025",
+    location: "Bengaluru, India",
+    audience: "800+ developers",
+    topic: "Building Ethical AI Systems",
+    description: "Panel discussion on responsible AI development, bias mitigation, and the importance of ethical considerations in machine learning.",
+    image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=500&h=300&fit=crop&crop=entropy&auto=format",
+    videoUrl: "",
+    slidesUrl: "",
+    type: "Technical Talk",
+    images: [
+      { url: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "AWS Community Day stage" },
+      { url: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "Technical demonstration" },
+      { url: "https://images.unsplash.com/photo-1560523159-6cd9d6165076?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "Architecture discussion" },
+      { url: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "Developer interaction" }
+    ],
+    fullDescription: "At AWS Community Day Bengaluru 2025, I participated in a session on building ethical AI systems — addressing responsible AI development, bias mitigation, and ethical considerations in machine learning. Drawing from real-world experience at IDFC First Bank, the talk covered practical approaches to detecting and mitigating bias in ML models, frameworks for ethical decision-making in AI development, and strategies for ensuring fairness and transparency. The session emphasized that building ethical AI is not just a regulatory requirement but a business imperative, and provided actionable guidance for developers to incorporate ethical considerations throughout the AI development lifecycle.",
+    highlights: [
+      "Presented to 800+ AWS developers and cloud practitioners",
+      "Discussed practical approaches to bias detection and mitigation in ML models",
+      "Shared frameworks for ethical decision-making in AI development",
+      "Addressed fairness, transparency, and accountability in production AI systems",
+      "Provided actionable guidance for responsible AI development"
+    ]
+  },
+  {
+    id: "techshow-london-2024-panel",
+    title: "Tech Show London 2024 — Panel Discussion",
+    event: "International Tech Conference",
+    date: "March 2024",
+    location: "London, UK",
+    audience: "20000+ professionals",
+    topic: "AI in Enterprise: Challenges & Opportunities",
+    description: "Panel discussion with industry leaders on deploying AI in enterprise environments.",
+    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=500&h=300&fit=crop&crop=entropy&auto=format",
+    videoUrl: "https://www.youtube.com/watch?v=jx_9SbARV9M",
+    slidesUrl: "",
+    type: "Panel Discussion",
+    images: [
+      { url: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "Tech Show London panel" },
+      { url: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "Panelists discussion" },
+      { url: "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "Audience engagement" },
+      { url: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "Post-discussion networking" }
+    ],
+    fullDescription: "At Tech Show London 2024, I participated in a panel discussion focusing on 'AI in Enterprise: Challenges & Opportunities.' The panel brought together experts from various industries to discuss the practical realities of deploying AI solutions in enterprise environments. Topics included governance frameworks for AI adoption, the challenge of scaling proof-of-concepts to production, managing stakeholder expectations, and ensuring responsible AI deployment. I shared perspectives from my experience in the banking sector, highlighting how financial institutions navigate regulatory requirements while pushing the boundaries of AI innovation. The discussion also covered the skills gap in enterprise AI, strategies for building AI-ready organizations, and predictions for the next wave of enterprise AI transformation.",
+    highlights: [
+      "Participated in panel at a major international tech conference in London",
+      "Discussed enterprise AI governance, scalability, and responsible deployment",
+      "Shared banking sector perspectives on AI regulation and innovation",
+      "Video recording available on YouTube",
+      "Covered organizational readiness and skills gap for AI transformation"
+    ]
+  },
+  {
+    id: "techshow-london-2024-solo",
+    title: "Tech Show London 2024 — Solo Presentation",
+    event: "International Tech Conference",
+    date: "March 2024",
+    location: "London, UK",
+    audience: "20000+ professionals",
+    topic: "Gen-AI: Shaping the Future of Industries",
+    description: "Comprehensive presentation on how Generative AI is transforming industries — from software, banking, and healthcare to manufacturing and media.",
+    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=500&h=300&fit=crop&crop=entropy&auto=format",
+    videoUrl: "",
+    slidesUrl: "https://docs.google.com/presentation/d/1D9mQphyW8I0KJ-5dqPfvtzEFxguv7tEi/edit?usp=sharing&ouid=111966055386890027600&rtpof=true&sd=true",
+    type: "Technical Talk",
+    images: [
+      { url: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "Tech Show London presentation" },
+      { url: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "Industry use cases" },
+      { url: "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "GenAI modalities overview" },
       { url: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "Q&A session" }
     ],
-    fullDescription: "At the National Analytics Summit in Delhi, I delivered a comprehensive talk on MLOps practices for successfully transitioning machine learning models from development to production. The presentation covered the entire MLOps lifecycle, from experiment tracking and model versioning to automated testing, deployment, and monitoring. I introduced key tools and frameworks in the MLOps ecosystem, including MLflow, Kubeflow, TFX, and various cloud-native solutions. The talk emphasized the importance of treating ML code with the same engineering rigor as traditional software, while addressing the unique challenges of ML systems such as data drift, model decay, and explainability requirements. Through case studies from my experience implementing MLOps at scale, I illustrated common pitfalls and best practices. The session included practical demonstrations of continuous integration and continuous deployment pipelines for ML models, as well as strategies for effective model monitoring in production. Attendees learned how to implement MLOps practices incrementally in their organizations, starting with the highest-value components based on their specific needs and constraints.",
+    fullDescription: "At Tech Show London 2024, I delivered a solo presentation on 'Gen-AI: Shaping the Future of Industries.' The talk started with a clear explanation of what Generative AI is — positioning it within the AI hierarchy from Artificial Intelligence → Machine Learning → Deep Learning/NLP → Generative AI, and highlighting how GenAI uses Large Language Models and Diffusion Models to generate content across multiple modalities: text, images, audio, video, tables, time series, point clouds, X-rays, and more. I then covered why GenAI matters — consumer friendliness, versatility, improved efficiency, near real-time results, faster deployment, and personalization. The core of the talk was a deep industry-by-industry exploration: Software & IT (documentation, code generation, automated testing, intelligent debugging, UI/UX), Media & Entertainment (content creation, misinformation detection, animation, music composition, dubbing), Banking & Finance (conversational banking, personalized advisors, document summarization, agent assessments), Healthcare (personalized agents, drug development, medical imaging), Retail (hyper-personalized marketing, 3D product display, immersive shopping), and Manufacturing (product design, supply chain advisory, event monitoring).",
     highlights: [
-      "Presented to 600+ data science and ML engineering professionals",
-      "Outlined complete MLOps reference architecture for enterprise ML systems",
-      "Demonstrated CI/CD pipeline implementation for ML models",
-      "Shared strategies for detecting and addressing model drift in production",
-      "Provided roadmap for organizations to incrementally adopt MLOps practices"
+      "Presented to 500+ professionals at a major London tech conference",
+      "Explained GenAI across the full AI hierarchy with clear positioning",
+      "Covered GenAI capabilities across 12+ modalities including text, images, audio, and video",
+      "Deep-dived into 6 industries: Software, Media, Banking, Healthcare, Retail, Manufacturing",
+      "Provided specific use cases and practical applications for each industry vertical"
+    ]
+  },
+  {
+    id: "acd-mumbai-2024",
+    title: "AWS Community Day Mumbai 2024",
+    event: "AWS Developer Conference",
+    date: "April 6, 2024",
+    location: "Mumbai, India",
+    audience: "500+ professionals",
+    topic: "Finance 2.0 — The Gen AI Blueprint",
+    description: "How Generative AI is reshaping financial services — from conversational banking and RAG-powered chatbots to personalized financial advisors.",
+    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=500&h=300&fit=crop&crop=entropy&auto=format",
+    videoUrl: "https://www.youtube.com/watch?v=XihAhZQZtV4",
+    slidesUrl: "https://docs.google.com/presentation/d/1SoGiBi8lzsngTeHyqqkjMrpNHmwWusRj/edit?usp=sharing&ouid=111966055386890027600&rtpof=true&sd=true",
+    type: "Technical Talk",
+    images: [
+      { url: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "AWS Community Day Mumbai stage" },
+      { url: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "Finance 2.0 architecture" },
+      { url: "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "Chatbot demonstration" },
+      { url: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "Developer Q&A" }
+    ],
+    fullDescription: "At AWS Community Day Mumbai 2024, I presented 'Finance 2.0 — The Gen AI Blueprint,' exploring how Generative AI is fundamentally transforming the financial services industry. The talk highlighted the key challenges customers face with traditional banking: long hold times, difficulty choosing between financial products (MF vs FD), lack of personalized advisory, financial fraud, and complex document handling. I presented compelling industry data — 95% of customers want instant channel switching, 53% are frustrated when they can't reply to mobile messages, and 1 in 3 customers have switched banks for better mobile experience. The solution presented centered on three GenAI applications: Personalized Financial Agents that understand individual customer needs, Conversational Banking that enables natural language interactions for banking operations, and RAG-powered Chatbots that provide accurate, context-aware responses using retrieval-augmented generation over banking knowledge bases. The session demonstrated how these technologies can dramatically improve customer satisfaction and reduce operational costs.",
+    highlights: [
+      "Presented to 500+ AWS professionals at AWS Community Day Mumbai",
+      "Highlighted critical banking customer experience statistics driving AI adoption",
+      "Demonstrated three GenAI solutions: Financial Agents, Conversational Banking, RAG Chatbots",
+      "Video recording available on YouTube",
+      "Addressed real customer pain points: hold times, fraud, product confusion, document overload"
+    ]
+  },
+  {
+    id: "devfest-mumbai-2023",
+    title: "Devfest Mumbai 2023",
+    event: "Google Developer Conference",
+    date: "December 09, 2023",
+    location: "Mumbai, India",
+    audience: "600+ professionals",
+    topic: "Building Transformers: Code Your Vision",
+    description: "A hands-on deep dive into the transformer architecture — building a complete encoder-decoder transformer model from scratch.",
+    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=500&h=300&fit=crop&crop=entropy&auto=format",
+    videoUrl: "",
+    slidesUrl: "https://docs.google.com/presentation/d/18151B3OcBubn7hXE7EBgtyCSbT-F-CduezLfPL9XX04/edit?usp=sharing",
+    type: "Technical Talk",
+    images: [
+      { url: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "Devfest Mumbai stage" },
+      { url: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "Transformer architecture diagram" },
+      { url: "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "Live coding session" },
+      { url: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "Post-talk discussions" }
+    ],
+    fullDescription: "At Devfest Mumbai 2023, I presented 'Building Transformers: Code Your Vision' — a hands-on deep dive into the transformer architecture, building the entire model from scratch. The talk started by explaining why transformers matter: they power everything from RAG and content generation to chatbots, agents, speech-to-speech AI, voice cloning, object detection, 3D modeling, and more — spanning textual, visual, and audio domains. I then walked through each component of the transformer architecture step by step: Positional Encoding (explaining why order matters with practical examples of sentence meaning changes), Scaled Dot-Product Attention (the self-attention mechanism), Attention Head (the fundamental building block), Multi-Head Attention (capturing various features from data simultaneously), Feed-Forward Module with Layer Normalization, and finally the complete Encoder-Decoder Architecture. The session included a link to a companion Jupyter notebook where attendees could follow along and implement each class themselves. The talk concluded with the full model integration and training process.",
+    highlights: [
+      "Presented to 600+ developers at Google Devfest Mumbai",
+      "Built a complete transformer model from scratch — component by component",
+      "Covered 7 key classes: Positional Encoding, Scaled Dot-Product, Attention Head, Multi-Head Attention, Feed-Forward, Transformer Block, and full Model",
+      "Provided companion Jupyter notebook for hands-on coding",
+      "Demonstrated transformer applications across text, vision, and audio domains"
     ]
   }
 ];
@@ -261,7 +464,7 @@ const SpeakingDetail = () => {
   const sliderRef = useRef<Slider | null>(null);
   const [fullscreenImage, setFullscreenImage] = useState<string | null>(null);
   const [fullscreenCaption, setFullscreenCaption] = useState<string>('');
-  
+
   // Handle keyboard navigation for the carousel
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -273,13 +476,13 @@ const SpeakingDetail = () => {
         }
       }
     };
-    
+
     window.addEventListener('keydown', handleKeyDown);
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
     };
   }, []);
-  
+
   const sliderSettings = {
     dots: true,
     infinite: true,
@@ -343,7 +546,7 @@ const SpeakingDetail = () => {
 
   return (
     <>
-      <SEO 
+      <SEO
         title={`${event.title} | Shubham Agnihotri Speaking`}
         description={event.description}
         keywords={`${event.topic}, ${event.type}, tech talks, speaking event, Shubham Agnihotri`}
@@ -356,16 +559,16 @@ const SpeakingDetail = () => {
             transition={{ duration: 0.6 }}
             className="mb-8"
           >
-            <Button 
-              variant="ghost" 
-              size="sm" 
+            <Button
+              variant="ghost"
+              size="sm"
               onClick={() => navigate('/speaking')}
               className="mb-4"
             >
               <ArrowLeft size={16} className="mr-2" />
               Back to Speaking
             </Button>
-            
+
             <h1 className="mb-4 text-3xl font-bold md:text-5xl text-foreground">
               {event.title}
             </h1>
@@ -381,16 +584,16 @@ const SpeakingDetail = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="overflow-hidden relative mb-12 rounded-xl border border-border"
           >
-            <Slider 
-              {...sliderSettings} 
-              className="carousel-slider" 
+            <Slider
+              {...sliderSettings}
+              className="carousel-slider"
               ref={sliderRef}
               aria-label="Event image carousel"
             >
               {event.images.map((image, index) => (
                 <div key={index} className="relative" aria-roledescription="slide" aria-label={`Slide ${index + 1} of ${event.images.length}: ${image.alt}`}>
-                  <img 
-                    src={image.url} 
+                  <img
+                    src={image.url}
                     alt={image.alt}
                     className="w-full h-[400px] object-cover cursor-pointer"
                     onClick={() => {
@@ -401,7 +604,7 @@ const SpeakingDetail = () => {
                   <div className="absolute right-0 bottom-0 left-0 p-4 bg-gradient-to-t to-transparent from-black/70 image-caption">
                     <div className="flex justify-between items-center">
                       <p className="text-sm font-medium text-white">{image.alt}</p>
-                      <button 
+                      <button
                         className="p-1.5 rounded-full bg-black/40 hover:bg-black/60 text-white transition-colors"
                         onClick={() => {
                           setFullscreenImage(image.url);
@@ -419,21 +622,21 @@ const SpeakingDetail = () => {
                 </div>
               ))}
             </Slider>
-            
+
             {/* Fullscreen Image Modal */}
             {fullscreenImage && (
               <div className="flex fixed inset-0 z-50 justify-center items-center p-4 bg-black/90">
                 <div className="relative w-full max-w-5xl max-h-[90vh]">
-                  <button 
+                  <button
                     className="absolute right-0 -top-12 p-2 text-white transition-colors hover:text-primary"
                     onClick={() => setFullscreenImage(null)}
                     aria-label="Close fullscreen view"
                   >
                     <X size={24} />
                   </button>
-                  <img 
-                    src={fullscreenImage} 
-                    alt={fullscreenCaption} 
+                  <img
+                    src={fullscreenImage}
+                    alt={fullscreenCaption}
                     className="w-full h-auto max-h-[80vh] object-contain rounded-lg"
                   />
                   <div className="mt-4 text-center text-white">
@@ -456,7 +659,7 @@ const SpeakingDetail = () => {
                 <h2 className="mb-4 text-xl font-semibold text-foreground">
                   Event Details
                 </h2>
-                
+
                 <div className="space-y-4 text-muted-foreground">
                   <div className="flex gap-3 items-center">
                     <Calendar size={18} className="text-primary" />
@@ -465,7 +668,7 @@ const SpeakingDetail = () => {
                       <p>{event.date}</p>
                     </div>
                   </div>
-                  
+
                   <div className="flex gap-3 items-center">
                     <MapPin size={18} className="text-primary" />
                     <div>
@@ -473,7 +676,7 @@ const SpeakingDetail = () => {
                       <p>{event.location}</p>
                     </div>
                   </div>
-                  
+
                   <div className="flex gap-3 items-center">
                     <Users size={18} className="text-primary" />
                     <div>
@@ -481,24 +684,43 @@ const SpeakingDetail = () => {
                       <p>{event.audience}</p>
                     </div>
                   </div>
-                  
-                  <div className="flex gap-3 items-center">
-                    <Video size={18} className="text-primary" />
-                    <div>
-                      <p className="text-sm font-medium text-foreground">Recording</p>
-                      <a 
-                        href={event.videoUrl} 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="text-primary hover:underline"
-                      >
-                        Watch Video
-                      </a>
+
+                  {event.videoUrl && (
+                    <div className="flex gap-3 items-center">
+                      <Video size={18} className="text-primary" />
+                      <div>
+                        <p className="text-sm font-medium text-foreground">Recording</p>
+                        <a
+                          href={event.videoUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-primary hover:underline"
+                        >
+                          Watch Video
+                        </a>
+                      </div>
                     </div>
-                  </div>
+                  )}
+
+                  {event.slidesUrl && (
+                    <div className="flex gap-3 items-center">
+                      <FileText size={18} className="text-primary" />
+                      <div>
+                        <p className="text-sm font-medium text-foreground">Presentation</p>
+                        <a
+                          href={event.slidesUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-primary hover:underline"
+                        >
+                          View Slides
+                        </a>
+                      </div>
+                    </div>
+                  )}
                 </div>
               </div>
-              
+
               <div className="p-6 rounded-lg border bg-card border-border">
                 <h2 className="mb-4 text-xl font-semibold text-foreground">
                   Highlights
@@ -513,7 +735,7 @@ const SpeakingDetail = () => {
                 </ul>
               </div>
             </motion.div>
-            
+
             {/* Event Content */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -530,23 +752,33 @@ const SpeakingDetail = () => {
                     {event.type}
                   </span>
                 </div>
-                
+
                 <div className="max-w-none prose prose-lg dark:prose-invert">
                   <p>{event.fullDescription}</p>
                 </div>
-                
-                <div className="mt-8">
-                  <Button size="lg" asChild>
-                    <a href={event.videoUrl} target="_blank" rel="noopener noreferrer">
-                      <Video size={18} className="mr-2" />
-                      Watch Full Presentation
-                    </a>
-                  </Button>
+
+                <div className="flex flex-wrap gap-4 mt-8">
+                  {event.videoUrl && (
+                    <Button size="lg" asChild>
+                      <a href={event.videoUrl} target="_blank" rel="noopener noreferrer">
+                        <Video size={18} className="mr-2" />
+                        Watch Full Presentation
+                      </a>
+                    </Button>
+                  )}
+                  {event.slidesUrl && (
+                    <Button size="lg" variant={event.videoUrl ? "outline" : "default"} asChild>
+                      <a href={event.slidesUrl} target="_blank" rel="noopener noreferrer">
+                        <FileText size={18} className="mr-2" />
+                        View Slides
+                      </a>
+                    </Button>
+                  )}
                 </div>
               </div>
             </motion.div>
           </div>
-          
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
