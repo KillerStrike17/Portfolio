@@ -70,15 +70,16 @@ const eventsData: Event[] = [
     audience: "1600+ developers",
     topic: "The Graph Awakens: Uniting Neo4j and Google's A2A Protocol",
     description: "Exploring Neo4j graph databases and Google's A2A protocol for interconnected AI agent systems.",
-    image: "https://images.unsplash.com/photo-1500673922987-e212871fec22?w=500&h=300&fit=crop&crop=entropy&auto=format",
+    image: "/images/devfest-bengaluru-2025/cover.jpg",
     videoUrl: "",
     slidesUrl: "https://docs.google.com/presentation/d/19TYkMa9-LyvhlVZVA_pkKfdvo3HqmGwpkOOK2fvaOmE/edit?usp=sharing",
     type: "Workshop",
     images: [
-      { url: "https://images.unsplash.com/photo-1500673922987-e212871fec22?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "Devfest stage" },
-      { url: "https://images.unsplash.com/photo-1591115765373-5207764f72e7?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "Audience interaction" },
-      { url: "https://images.unsplash.com/photo-1560523159-4a9692d222f9?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "Live coding demo" },
-      { url: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "Q&A session" }
+      { url: "/images/devfest-bengaluru-2025/cover.jpg", alt: "Devfest Bangalore 2025 stage" },
+      { url: "/images/devfest-bengaluru-2025/image_1.jpg", alt: "Presentation in progress" },
+      { url: "/images/devfest-bengaluru-2025/image_2.jpg", alt: "Audience interaction" },
+      { url: "/images/devfest-bengaluru-2025/image_3.jpg", alt: "Live coding demo" },
+      { url: "/images/devfest-bengaluru-2025/image_4.jpg", alt: "Q&A session" }
     ],
     fullDescription: "At Google Devfest Bangalore 2025, I delivered 'The Graph Awakens' — connecting Neo4j graph databases with Google's A2A protocol. The presentation explored how graph databases model real-world connected data far better than traditional relational databases, and how the A2A protocol provides a standardized framework for AI agents to communicate, discover each other's capabilities, and collaborate on tasks. The session covered the full A2A architecture: Agent Cards (agent.json) for capability discovery, HTTPS-based message communication, task lifecycle management (submitted → working → completed), and multi-modal support. I also introduced Neo4j fundamentals including the Cypher query language and demonstrated the Neo4j Sandbox. The talk concluded with a live demo showing multiple A2A agents collaborating using graph-powered knowledge bases.",
     highlights: [
@@ -126,15 +127,17 @@ const eventsData: Event[] = [
     audience: "500+ developers",
     topic: "Orchestrating Financial Document Intelligence: Agentic AI Workflows with AWS Bedrock & Step Functions",
     description: "Transforming manual document chaos in fintech into autonomous agentic AI workflows using AWS services.",
-    image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=500&h=300&fit=crop&crop=entropy&auto=format",
+    image: "/images/acd-mumbai-2025/PHOTO-2026-03-22-21-49-39 6.jpg",
     videoUrl: "https://www.youtube.com/watch?v=dM5l7J0a478",
     slidesUrl: "https://docs.google.com/presentation/d/1pCS4o4xWdilztbqMHZLrtPjG885G-YnMdAYo8nXRQvs/edit?usp=sharing",
     type: "Technical Talk",
     images: [
-      { url: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "AWS Community Day stage" },
-      { url: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "Architecture walkthrough" },
-      { url: "https://images.unsplash.com/photo-1560523159-6cd9d6165076?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "Live demo" },
-      { url: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "Q&A session" }
+      { url: "/images/acd-mumbai-2025/PHOTO-2026-03-22-21-49-39 6.jpg", alt: "AWS Community Day Mumbai 2025 stage" },
+      { url: "/images/acd-mumbai-2025/PHOTO-2026-03-22-21-49-39 7.jpg", alt: "Architecture walkthrough" },
+      { url: "/images/acd-mumbai-2025/PHOTO-2026-03-22-21-49-39 8.jpg", alt: "Live demo" },
+      { url: "/images/acd-mumbai-2025/PHOTO-2026-03-22-21-49-39 9.jpg", alt: "Audience interaction" },
+      { url: "/images/acd-mumbai-2025/PHOTO-2026-03-22-21-49-39 10.jpg", alt: "Q&A session" },
+      { url: "/images/acd-mumbai-2025/PHOTO-2026-03-22-21-49-39 11.jpg", alt: "Networking" }
     ],
     fullDescription: "At AWS Community Day Mumbai 2025, I co-presented 'Orchestrating Financial Document Intelligence' — addressing the massive problem of manual document processing in financial services. Banks face slow approval cycles, error-prone data entry, compliance gaps, and high operational costs when handling KYC forms, loan agreements, bank statements, and invoices. The talk presented a solution using Agentic AI workflows on AWS: Amazon Bedrock Agents for specialized intelligence (an Extractor agent using Textract for data extraction, and a Validator agent for business logic), AWS Step Functions for workflow orchestration (sequencing, error handling, branching logic), and a complete security layer for data protection and compliance. I demonstrated end-to-end automation of a KYC bundle processing workflow — from document ingestion through S3, intelligent extraction, validation, to automated decision-making and routing. The talk showed how this approach replaces third-party vendors and saves significant operational costs.",
     highlights: [
@@ -154,15 +157,15 @@ const eventsData: Event[] = [
     audience: "5000+ developers",
     topic: "Mastering Google's A2A Protocol: Deep Dive",
     description: "In-depth exploration of Google's A2A protocol, covering agents, agent cards, MCP, and real-world examples.",
-    image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=500&h=300&fit=crop&crop=entropy&auto=format",
+    image: "/images/cypher-bengaluru-2025/PHOTO-2026-03-22-21-28-17 36.jpg",
     videoUrl: "",
     slidesUrl: "https://docs.google.com/presentation/d/1B1uxa0tAMKIxNanHQLSnwB3vI6S1RTP0YmYDPgpn1zw/edit?usp=sharing",
     type: "Technical Talk",
     images: [
-      { url: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "AIM Cypher keynote stage" },
-      { url: "https://images.unsplash.com/photo-1591115765373-5207764f72e7?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "Protocol architecture explanation" },
-      { url: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "A2A vs MCP comparison" },
-      { url: "https://images.unsplash.com/photo-1559223607-a43c990c692c?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "Live examples demonstration" }
+      { url: "/images/cypher-bengaluru-2025/PHOTO-2026-03-22-21-28-17 36.jpg", alt: "AIM Cypher keynote stage" },
+      { url: "/images/cypher-bengaluru-2025/PHOTO-2026-03-22-21-28-17 37.jpg", alt: "Protocol architecture explanation" },
+      { url: "/images/cypher-bengaluru-2025/PHOTO-2026-03-22-21-28-17 38.jpg", alt: "A2A vs MCP comparison" },
+      { url: "/images/cypher-bengaluru-2025/PHOTO-2026-03-22-21-28-17 39.jpg", alt: "Live examples demonstration" }
     ],
     fullDescription: "At AIM Cypher Bengaluru 2025 — one of India's largest analytics and AI conferences with 5000+ developers — I delivered a deep-dive session on Google's A2A protocol. The talk started with a clear distinction between AI workflows (structured pipelines with fixed steps) and Agentic workflows (autonomous systems where AI decides next steps). I then covered the complete A2A protocol stack: why standardized agent communication is needed, Agent Cards (agent.json) for capability discovery, Messages for HTTPS-based communication between agents, and Task execution lifecycle. A significant portion of the talk was dedicated to comparing A2A with Model Context Protocol (MCP) — explaining when to use each, their complementary nature, and architectural differences. The session concluded with real-world examples demonstrating how A2A agents can be composed to solve complex multi-step problems across different frameworks and providers.",
     highlights: [
@@ -182,15 +185,16 @@ const eventsData: Event[] = [
     audience: "1000+ developers",
     topic: "Mastering Google's A2A Protocol: Connecting AI Agents",
     description: "Hands-on session on A2A protocol covering agent cards, HTTPS communication, and live agent demos.",
-    image: "https://images.unsplash.com/photo-1470813740244-df37b8c1edcb?w=500&h=300&fit=crop&crop=entropy&auto=format",
+    image: "/images/cloud-community-day-bengaluru-2025/PHOTO-2026-03-22-21-49-39.jpg",
     videoUrl: "",
     slidesUrl: "https://docs.google.com/presentation/d/1FQtPobhvoI5ZHFyTCCW-rDezRjqRR_TPUrhiWy1dr1g/edit?usp=sharing",
     type: "Technical Talk",
     images: [
-      { url: "https://images.unsplash.com/photo-1470813740244-df37b8c1edcb?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "Cloud Community Day stage" },
-      { url: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "A2A architecture diagram" },
-      { url: "https://images.unsplash.com/photo-1558403194-611308249627?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "Live coding demo" },
-      { url: "https://images.unsplash.com/photo-1559223607-a43c990c692c?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "Developer networking" }
+      { url: "/images/cloud-community-day-bengaluru-2025/PHOTO-2026-03-22-21-49-39.jpg", alt: "Cloud Community Day stage" },
+      { url: "/images/cloud-community-day-bengaluru-2025/PHOTO-2026-03-22-21-49-39 2.jpg", alt: "A2A architecture diagram" },
+      { url: "/images/cloud-community-day-bengaluru-2025/PHOTO-2026-03-22-21-49-39 3.jpg", alt: "Live coding demo" },
+      { url: "/images/cloud-community-day-bengaluru-2025/PHOTO-2026-03-22-21-49-39 4.jpg", alt: "Audience interaction" },
+      { url: "/images/cloud-community-day-bengaluru-2025/PHOTO-2026-03-22-21-49-39 5.jpg", alt: "Developer networking" }
     ],
     fullDescription: "At Google Cloud Community Day Bengaluru 2025, I presented 'Mastering Google's A2A Protocol' — a focused, hands-on session on connecting AI agents using standardized communication. The talk covered the A2A protocol's motivation (replacing fragmented agent APIs), its core architecture components — Agent Cards for self-describing agent capabilities, HTTPS-based Messages for inter-agent communication (including message structure with roles, parts, and task/context IDs), and the Task lifecycle from submission to completion. I demonstrated using practical scenarios: a multi-agent movie and cab booking system where agents discover each other through Agent Cards, communicate via standardized messages, and coordinate task execution. The session included live coding of an AgentExecutor class showing how to implement agents that conform to the A2A protocol. Developers left with a clear understanding of how to build A2A-compliant agents.",
     highlights: [
@@ -294,15 +298,17 @@ const eventsData: Event[] = [
     audience: "800+ developers",
     topic: "Building Ethical AI Systems",
     description: "Panel discussion on responsible AI development, bias mitigation, and the importance of ethical considerations in machine learning.",
-    image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=500&h=300&fit=crop&crop=entropy&auto=format",
+    image: "/images/acd-bengaluru-2025/PHOTO-2026-03-22-21-28-17 25.jpg",
     videoUrl: "",
     slidesUrl: "",
     type: "Technical Talk",
     images: [
-      { url: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "AWS Community Day stage" },
-      { url: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "Technical demonstration" },
-      { url: "https://images.unsplash.com/photo-1560523159-6cd9d6165076?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "Architecture discussion" },
-      { url: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "Developer interaction" }
+      { url: "/images/acd-bengaluru-2025/PHOTO-2026-03-22-21-28-17 25.jpg", alt: "AWS Community Day Bengaluru stage" },
+      { url: "/images/acd-bengaluru-2025/PHOTO-2026-03-22-21-28-17 26.jpg", alt: "Technical demonstration" },
+      { url: "/images/acd-bengaluru-2025/PHOTO-2026-03-22-21-28-17 27.jpg", alt: "Architecture discussion" },
+      { url: "/images/acd-bengaluru-2025/PHOTO-2026-03-22-21-28-17 28.jpg", alt: "Developer interaction" },
+      { url: "/images/acd-bengaluru-2025/PHOTO-2026-03-22-21-28-17 29.jpg", alt: "Audience engagement" },
+      { url: "/images/acd-bengaluru-2025/PHOTO-2026-03-22-21-28-17 30.jpg", alt: "Networking session" }
     ],
     fullDescription: "At AWS Community Day Bengaluru 2025, I participated in a session on building ethical AI systems — addressing responsible AI development, bias mitigation, and ethical considerations in machine learning. Drawing from real-world experience at IDFC First Bank, the talk covered practical approaches to detecting and mitigating bias in ML models, frameworks for ethical decision-making in AI development, and strategies for ensuring fairness and transparency. The session emphasized that building ethical AI is not just a regulatory requirement but a business imperative, and provided actionable guidance for developers to incorporate ethical considerations throughout the AI development lifecycle.",
     highlights: [
@@ -322,15 +328,16 @@ const eventsData: Event[] = [
     audience: "20000+ professionals",
     topic: "AI in Enterprise: Challenges & Opportunities",
     description: "Panel discussion with industry leaders on deploying AI in enterprise environments.",
-    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=500&h=300&fit=crop&crop=entropy&auto=format",
+    image: "/images/techshow-london-2024-panel/PHOTO-2026-03-22-21-28-17 6.jpg",
     videoUrl: "https://www.youtube.com/watch?v=jx_9SbARV9M",
     slidesUrl: "",
     type: "Panel Discussion",
     images: [
-      { url: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "Tech Show London panel" },
-      { url: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "Panelists discussion" },
-      { url: "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "Audience engagement" },
-      { url: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "Post-discussion networking" }
+      { url: "/images/techshow-london-2024-panel/PHOTO-2026-03-22-21-28-17 6.jpg", alt: "Tech Show London panel" },
+      { url: "/images/techshow-london-2024-panel/PHOTO-2026-03-22-21-28-17 7.jpg", alt: "Panelists discussion" },
+      { url: "/images/techshow-london-2024-panel/PHOTO-2026-03-22-21-28-17 8.jpg", alt: "Audience engagement" },
+      { url: "/images/techshow-london-2024-panel/PHOTO-2026-03-22-21-28-17 9.jpg", alt: "Panel interaction" },
+      { url: "/images/techshow-london-2024-panel/PHOTO-2026-03-22-21-28-17 10.jpg", alt: "Post-discussion networking" }
     ],
     fullDescription: "At Tech Show London 2024, I participated in a panel discussion focusing on 'AI in Enterprise: Challenges & Opportunities.' The panel brought together experts from various industries to discuss the practical realities of deploying AI solutions in enterprise environments. Topics included governance frameworks for AI adoption, the challenge of scaling proof-of-concepts to production, managing stakeholder expectations, and ensuring responsible AI deployment. I shared perspectives from my experience in the banking sector, highlighting how financial institutions navigate regulatory requirements while pushing the boundaries of AI innovation. The discussion also covered the skills gap in enterprise AI, strategies for building AI-ready organizations, and predictions for the next wave of enterprise AI transformation.",
     highlights: [
@@ -350,15 +357,16 @@ const eventsData: Event[] = [
     audience: "20000+ professionals",
     topic: "Gen-AI: Shaping the Future of Industries",
     description: "Comprehensive presentation on how Generative AI is transforming industries — from software, banking, and healthcare to manufacturing and media.",
-    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=500&h=300&fit=crop&crop=entropy&auto=format",
+    image: "/images/techshow-london-2024-solo/PHOTO-2026-03-22-21-28-17.jpg",
     videoUrl: "",
     slidesUrl: "https://docs.google.com/presentation/d/1D9mQphyW8I0KJ-5dqPfvtzEFxguv7tEi/edit?usp=sharing&ouid=111966055386890027600&rtpof=true&sd=true",
     type: "Technical Talk",
     images: [
-      { url: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "Tech Show London presentation" },
-      { url: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "Industry use cases" },
-      { url: "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "GenAI modalities overview" },
-      { url: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "Q&A session" }
+      { url: "/images/techshow-london-2024-solo/PHOTO-2026-03-22-21-28-17.jpg", alt: "Tech Show London presentation" },
+      { url: "/images/techshow-london-2024-solo/PHOTO-2026-03-22-21-28-17 2.jpg", alt: "Industry use cases" },
+      { url: "/images/techshow-london-2024-solo/PHOTO-2026-03-22-21-28-17 3.jpg", alt: "GenAI modalities overview" },
+      { url: "/images/techshow-london-2024-solo/PHOTO-2026-03-22-21-28-17 4.jpg", alt: "Audience engagement" },
+      { url: "/images/techshow-london-2024-solo/PHOTO-2026-03-22-21-28-17 5.jpg", alt: "Q&A session" }
     ],
     fullDescription: "At Tech Show London 2024, I delivered a solo presentation on 'Gen-AI: Shaping the Future of Industries.' The talk started with a clear explanation of what Generative AI is — positioning it within the AI hierarchy from Artificial Intelligence → Machine Learning → Deep Learning/NLP → Generative AI, and highlighting how GenAI uses Large Language Models and Diffusion Models to generate content across multiple modalities: text, images, audio, video, tables, time series, point clouds, X-rays, and more. I then covered why GenAI matters — consumer friendliness, versatility, improved efficiency, near real-time results, faster deployment, and personalization. The core of the talk was a deep industry-by-industry exploration: Software & IT (documentation, code generation, automated testing, intelligent debugging, UI/UX), Media & Entertainment (content creation, misinformation detection, animation, music composition, dubbing), Banking & Finance (conversational banking, personalized advisors, document summarization, agent assessments), Healthcare (personalized agents, drug development, medical imaging), Retail (hyper-personalized marketing, 3D product display, immersive shopping), and Manufacturing (product design, supply chain advisory, event monitoring).",
     highlights: [
@@ -378,15 +386,16 @@ const eventsData: Event[] = [
     audience: "500+ professionals",
     topic: "Finance 2.0 — The Gen AI Blueprint",
     description: "How Generative AI is reshaping financial services — from conversational banking and RAG-powered chatbots to personalized financial advisors.",
-    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=500&h=300&fit=crop&crop=entropy&auto=format",
+    image: "/images/acd-mumbai-2024/PHOTO-2026-03-22-21-28-17 11.jpg",
     videoUrl: "https://www.youtube.com/watch?v=XihAhZQZtV4",
     slidesUrl: "https://docs.google.com/presentation/d/1SoGiBi8lzsngTeHyqqkjMrpNHmwWusRj/edit?usp=sharing&ouid=111966055386890027600&rtpof=true&sd=true",
     type: "Technical Talk",
     images: [
-      { url: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "AWS Community Day Mumbai stage" },
-      { url: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "Finance 2.0 architecture" },
-      { url: "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "Chatbot demonstration" },
-      { url: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=600&fit=crop&crop=entropy&auto=format", alt: "Developer Q&A" }
+      { url: "/images/acd-mumbai-2024/PHOTO-2026-03-22-21-28-17 11.jpg", alt: "AWS Community Day Mumbai 2024 stage" },
+      { url: "/images/acd-mumbai-2024/PHOTO-2026-03-22-21-28-17 12.jpg", alt: "Finance 2.0 architecture" },
+      { url: "/images/acd-mumbai-2024/PHOTO-2026-03-22-21-28-17 13.jpg", alt: "Chatbot demonstration" },
+      { url: "/images/acd-mumbai-2024/PHOTO-2026-03-22-21-28-17 14.jpg", alt: "Audience engagement" },
+      { url: "/images/acd-mumbai-2024/PHOTO-2026-03-22-21-28-17 15.jpg", alt: "Developer Q&A" }
     ],
     fullDescription: "At AWS Community Day Mumbai 2024, I presented 'Finance 2.0 — The Gen AI Blueprint,' exploring how Generative AI is fundamentally transforming the financial services industry. The talk highlighted the key challenges customers face with traditional banking: long hold times, difficulty choosing between financial products (MF vs FD), lack of personalized advisory, financial fraud, and complex document handling. I presented compelling industry data — 95% of customers want instant channel switching, 53% are frustrated when they can't reply to mobile messages, and 1 in 3 customers have switched banks for better mobile experience. The solution presented centered on three GenAI applications: Personalized Financial Agents that understand individual customer needs, Conversational Banking that enables natural language interactions for banking operations, and RAG-powered Chatbots that provide accurate, context-aware responses using retrieval-augmented generation over banking knowledge bases. The session demonstrated how these technologies can dramatically improve customer satisfaction and reduce operational costs.",
     highlights: [

@@ -29,7 +29,7 @@ const Speaking = () => {
       audience: "1600+ developers",
       topic: "The Graph Awakens: Uniting Neo4j and Google's A2A Protocol",
       description: "Exploring how Neo4j graph databases and Google's A2A protocol can be combined to build interconnected AI agent systems with graph-powered knowledge and seamless agent-to-agent communication.",
-      image: "https://images.unsplash.com/photo-1500673922987-e212871fec22?w=500&h=300&fit=crop&crop=entropy&auto=format",
+      image: "/images/devfest-bengaluru-2025/cover.jpg",
       videoUrl: "",
       slidesUrl: "https://docs.google.com/presentation/d/19TYkMa9-LyvhlVZVA_pkKfdvo3HqmGwpkOOK2fvaOmE/edit?usp=sharing",
       type: "Workshop"
@@ -57,7 +57,7 @@ const Speaking = () => {
       audience: "500+ developers",
       topic: "Orchestrating Financial Document Intelligence: Agentic AI Workflows with AWS Bedrock & Step Functions",
       description: "How to transform manual document chaos in fintech (KYC, loans) into autonomous agentic AI workflows using AWS Bedrock Agents, Step Functions, and Amazon Textract for intelligent extraction, validation, and routing.",
-      image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=500&h=300&fit=crop&crop=entropy&auto=format",
+      image: "/images/acd-mumbai-2025/PHOTO-2026-03-22-21-49-39 6.jpg",
       videoUrl: "https://www.youtube.com/watch?v=dM5l7J0a478",
       slidesUrl: "https://docs.google.com/presentation/d/1pCS4o4xWdilztbqMHZLrtPjG885G-YnMdAYo8nXRQvs/edit?usp=sharing",
       type: "Technical Talk"
@@ -71,7 +71,7 @@ const Speaking = () => {
       audience: "5000+ developers",
       topic: "Mastering Google's A2A Protocol: Deep Dive",
       description: "An in-depth exploration of Google's A2A protocol — covering agents vs. agentic workflows, agent cards, message-based communication, task execution, Model Context Protocol (MCP), and A2A vs MCP comparison with real-world examples.",
-      image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=500&h=300&fit=crop&crop=entropy&auto=format",
+      image: "/images/cypher-bengaluru-2025/PHOTO-2026-03-22-21-28-17 36.jpg",
       videoUrl: "",
       slidesUrl: "https://docs.google.com/presentation/d/1B1uxa0tAMKIxNanHQLSnwB3vI6S1RTP0YmYDPgpn1zw/edit?usp=sharing",
       type: "Technical Talk"
@@ -85,7 +85,7 @@ const Speaking = () => {
       audience: "1000+ developers",
       topic: "Mastering Google's A2A Protocol: Connecting AI Agents",
       description: "A hands-on session on Google's A2A protocol covering agent cards, capability discovery, HTTPS-based message communication, task lifecycle management, and live demos of multi-agent collaboration.",
-      image: "https://images.unsplash.com/photo-1470813740244-df37b8c1edcb?w=500&h=300&fit=crop&crop=entropy&auto=format",
+      image: "/images/cloud-community-day-bengaluru-2025/PHOTO-2026-03-22-21-49-39.jpg",
       videoUrl: "",
       slidesUrl: "https://docs.google.com/presentation/d/1FQtPobhvoI5ZHFyTCCW-rDezRjqRR_TPUrhiWy1dr1g/edit?usp=sharing",
       type: "Technical Talk"
@@ -141,7 +141,7 @@ const Speaking = () => {
       audience: "800+ developers",
       topic: "Building Ethical AI Systems",
       description: "Panel discussion on responsible AI development, bias mitigation, and the importance of ethical considerations in machine learning.",
-      image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=500&h=300&fit=crop&crop=entropy&auto=format",
+      image: "/images/acd-bengaluru-2025/PHOTO-2026-03-22-21-28-17 25.jpg",
       videoUrl: "",
       slidesUrl: "",
       type: "Technical Talk"
@@ -155,7 +155,7 @@ const Speaking = () => {
       audience: "20000+ professionals",
       topic: "AI in Enterprise: Challenges & Opportunities",
       description: "Panel discussion with industry leaders on the challenges and opportunities of deploying AI in enterprise environments, covering governance, scalability, and real-world impact.",
-      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=500&h=300&fit=crop&crop=entropy&auto=format",
+      image: "/images/techshow-london-2024-panel/PHOTO-2026-03-22-21-28-17 6.jpg",
       videoUrl: "https://www.youtube.com/watch?v=jx_9SbARV9M",
       slidesUrl: "",
       type: "Panel Discussion"
@@ -169,7 +169,7 @@ const Speaking = () => {
       audience: "20000+ professionals",
       topic: "Gen-AI: Shaping the Future of Industries",
       description: "Comprehensive presentation on how Generative AI is transforming industries — from software & IT, banking & finance, healthcare, and retail to manufacturing and media, with practical use cases across each sector.",
-      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=500&h=300&fit=crop&crop=entropy&auto=format",
+      image: "/images/techshow-london-2024-solo/PHOTO-2026-03-22-21-28-17.jpg",
       videoUrl: "",
       slidesUrl: "https://docs.google.com/presentation/d/1D9mQphyW8I0KJ-5dqPfvtzEFxguv7tEi/edit?usp=sharing&ouid=111966055386890027600&rtpof=true&sd=true",
       type: "Technical Talk"
@@ -183,7 +183,7 @@ const Speaking = () => {
       audience: "500+ professionals",
       topic: "Finance 2.0 — The Gen AI Blueprint",
       description: "Exploring how Generative AI is reshaping the financial services industry — from conversational banking and RAG-powered chatbots to personalized financial advisors, addressing real customer pain points like long hold times, fraud, and document overload.",
-      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=500&h=300&fit=crop&crop=entropy&auto=format",
+      image: "/images/acd-mumbai-2024/PHOTO-2026-03-22-21-28-17 11.jpg",
       videoUrl: "https://www.youtube.com/watch?v=XihAhZQZtV4",
       slidesUrl: "https://docs.google.com/presentation/d/1SoGiBi8lzsngTeHyqqkjMrpNHmwWusRj/edit?usp=sharing&ouid=111966055386890027600&rtpof=true&sd=true",
       type: "Technical Talk"
