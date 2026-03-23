@@ -356,8 +356,10 @@ const Speaking = () => {
               I'm always excited to share knowledge about data science, AI/ML, and technology.
               Let's connect to discuss speaking opportunities!
             </p>
-            <Button size="lg">
-              Get in Touch
+            <Button size="lg" asChild>
+              <Link to="/contact">
+                Get in Touch
+              </Link>
             </Button>
           </motion.div>
         </div>
