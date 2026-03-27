@@ -18,66 +18,6 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    title: "PromoGenie",
-    description: "AI-powered promotional content generator using advanced NLP models to create engaging marketing copy automatically.",
-    image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=500&h=300&fit=crop&crop=entropy&auto=format",
-    technologies: ["Python", "OpenAI GPT", "React", "FastAPI", "Docker"],
-    github: "https://github.com/shubhamagnihotri/promogenie",
-    demo: "https://promogenie.demo.com",
-    category: "AI/ML",
-    show: false,
-  },
-  {
-    title: "Bud-E",
-    description: "Intelligent chatbot for customer service automation with sentiment analysis and real-time response generation.",
-    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=500&h=300&fit=crop&crop=entropy&auto=format",
-    technologies: ["Python", "TensorFlow", "BERT", "Flask", "MongoDB"],
-    github: "https://github.com/shubhamagnihotri/bud-e",
-    demo: "https://bud-e.demo.com",
-    category: "AI/ML",
-    show: false,
-  },
-  {
-    title: "AutoML Pipeline",
-    description: "End-to-end automated machine learning pipeline with model selection, hyperparameter tuning, and deployment automation.",
-    image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=500&h=300&fit=crop&crop=entropy&auto=format",
-    technologies: ["Python", "Scikit-learn", "MLflow", "Kubernetes", "AWS"],
-    github: "https://github.com/shubhamagnihotri/automl-pipeline",
-    demo: "https://automl.demo.com",
-    category: "MLOps",
-    show: false,
-  },
-  {
-    title: "Self-Driving Car",
-    description: "Computer vision-based autonomous vehicle navigation system using deep learning and sensor fusion techniques.",
-    image: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=500&h=300&fit=crop&crop=entropy&auto=format",
-    technologies: ["Python", "OpenCV", "TensorFlow", "ROS", "C++"],
-    github: "https://github.com/shubhamagnihotri/self-driving-car",
-    demo: "https://selfdriving.demo.com",
-    category: "Computer Vision",
-    show: false,
-  },
-  {
-    title: "Banking Analytics Dashboard",
-    description: "Real-time analytics dashboard for banking operations with fraud detection and customer insights visualization.",
-    image: "https://images.unsplash.com/photo-1500673922987-e212871fec22?w=500&h=300&fit=crop&crop=entropy&auto=format",
-    technologies: ["React", "D3.js", "Python", "PostgreSQL", "Redis"],
-    github: "https://github.com/shubhamagnihotri/banking-dashboard",
-    demo: "https://banking-analytics.demo.com",
-    category: "Analytics",
-    show: false,
-  },
-  {
-    title: "Agricultural Prediction System",
-    description: "Machine learning system for crop yield prediction and agricultural risk assessment using weather and soil data.",
-    image: "https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=500&h=300&fit=crop&crop=entropy&auto=format",
-    technologies: ["Python", "Random Forest", "React", "IoT", "MongoDB"],
-    github: "https://github.com/shubhamagnihotri/agri-prediction",
-    demo: "https://agri-predict.demo.com",
-    category: "AI/ML",
-    show: false,
-  },
-  {
     title: "Portfolio",
     description: "Portfolio — a public GitHub project.",
     image: "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?w=500&h=300&fit=crop&auto=format",
@@ -85,7 +25,7 @@ export const projects: Project[] = [
     github: "https://github.com/KillerStrike17/Portfolio",
     demo: "https://portfolio-nine-opal-ryitllc5q9.vercel.app",
     category: "Other",
-    show: false,  // ← flip to true to display on the Projects page
+    show: true,  // ← flip to true to display on the Projects page
   },
   {
     title: "KillerStrike17",
@@ -103,7 +43,7 @@ export const projects: Project[] = [
     technologies: ["Python"],
     github: "https://github.com/KillerStrike17/A2A-Agent2Agent-Protocol-demo",
     category: "Other",
-    show: false,  // ← flip to true to display on the Projects page
+    show: true,  // ← flip to true to display on the Projects page
   },
   {
     title: "CP-Journey",
@@ -112,7 +52,7 @@ export const projects: Project[] = [
     technologies: ["Python"],
     github: "https://github.com/KillerStrike17/CP-Journey",
     category: "Other",
-    show: false,  // ← flip to true to display on the Projects page
+    show: true,  // ← flip to true to display on the Projects page
   },
   {
     title: "vlm-from-scratch",
@@ -130,7 +70,7 @@ export const projects: Project[] = [
     technologies: ["Python"],
     github: "https://github.com/KillerStrike17/A2A-Protocol-with-Neo4j",
     category: "Other",
-    show: false,  // ← flip to true to display on the Projects page
+    show: true,  // ← flip to true to display on the Projects page
   },
   {
     title: "Google-Agent-Development-Kit-Deep-Dive",
@@ -139,7 +79,7 @@ export const projects: Project[] = [
     technologies: ["GitHub"],
     github: "https://github.com/KillerStrike17/Google-Agent-Development-Kit-Deep-Dive",
     category: "Other",
-    show: false,  // ← flip to true to display on the Projects page
+    show: true,  // ← flip to true to display on the Projects page
   },
   {
     title: "A2A-Agent2Agent-Protocol-Gitex-2025",
@@ -148,7 +88,7 @@ export const projects: Project[] = [
     technologies: ["Python"],
     github: "https://github.com/KillerStrike17/A2A-Agent2Agent-Protocol-Gitex-2025",
     category: "Other",
-    show: false,  // ← flip to true to display on the Projects page
+    show: true,  // ← flip to true to display on the Projects page
   },
   {
     title: "Google-ADK-with-MCP",
@@ -194,7 +134,7 @@ export const projects: Project[] = [
     technologies: ["Python"],
     github: "https://github.com/KillerStrike17/PromoGenie",
     category: "Other",
-    show: false,  // ← flip to true to display on the Projects page
+    show: true,  // ← flip to true to display on the Projects page
   },
   {
     title: "lightning-template-hydra",
@@ -230,7 +170,7 @@ export const projects: Project[] = [
     technologies: ["GitHub"],
     github: "https://github.com/KillerStrike17/Stable-Diffusion-with-custom-styles",
     category: "Other",
-    show: false,  // ← flip to true to display on the Projects page
+    show: true,  // ← flip to true to display on the Projects page
   },
   {
     title: "FineTuning_LLMs",
@@ -248,7 +188,7 @@ export const projects: Project[] = [
     technologies: ["Jupyter Notebook"],
     github: "https://github.com/KillerStrike17/Law-RAG",
     category: "Other",
-    show: false,  // ← flip to true to display on the Projects page
+    show: true,  // ← flip to true to display on the Projects page
   },
   {
     title: "LLM-Ops",
@@ -275,7 +215,7 @@ export const projects: Project[] = [
     technologies: ["Python"],
     github: "https://github.com/KillerStrike17/ClipClip",
     category: "Other",
-    show: false,  // ← flip to true to display on the Projects page
+    show: true,  // ← flip to true to display on the Projects page
   },
   {
     title: "Pretrained-Transformers---BERT--ViT-and-GPT",
@@ -293,7 +233,7 @@ export const projects: Project[] = [
     technologies: ["Jupyter Notebook"],
     github: "https://github.com/KillerStrike17/Transformers-from-scratch",
     category: "Other",
-    show: false,  // ← flip to true to display on the Projects page
+    show: true,  // ← flip to true to display on the Projects page
   },
   {
     title: "HuggingFace-AudioTransformers",
@@ -311,7 +251,7 @@ export const projects: Project[] = [
     technologies: ["Jupyter Notebook"],
     github: "https://github.com/KillerStrike17/YOLO-v3-from-Scratch",
     category: "Other",
-    show: false,  // ← flip to true to display on the Projects page
+    show: true,  // ← flip to true to display on the Projects page
   },
   {
     title: "MLOps-with-ZenML",
@@ -392,7 +332,7 @@ export const projects: Project[] = [
     technologies: ["Jupyter Notebook"],
     github: "https://github.com/KillerStrike17/AI-QR-Code",
     category: "Other",
-    show: false,  // ← flip to true to display on the Projects page
+    show: true,  // ← flip to true to display on the Projects page
   },
   {
     title: "Song-Recommendation-System",
@@ -428,7 +368,7 @@ export const projects: Project[] = [
     technologies: ["Jupyter Notebook"],
     github: "https://github.com/KillerStrike17/DavidNet-Cifar10-Dawn-Benchmark",
     category: "Other",
-    show: false,  // ← flip to true to display on the Projects page
+    show: true,  // ← flip to true to display on the Projects page
   },
   {
     title: "My-IT-Assistant",
@@ -482,7 +422,7 @@ export const projects: Project[] = [
     technologies: ["Jupyter Notebook"],
     github: "https://github.com/KillerStrike17/MNIST-99.4-under-8k-parameters",
     category: "Other",
-    show: false,  // ← flip to true to display on the Projects page
+    show: true,  // ← flip to true to display on the Projects page
   },
   {
     title: "MNIST-Pytorch-99.4-under-10k-parameters",
@@ -491,7 +431,7 @@ export const projects: Project[] = [
     technologies: ["Jupyter Notebook"],
     github: "https://github.com/KillerStrike17/MNIST-Pytorch-99.4-under-10k-parameters",
     category: "Other",
-    show: false,  // ← flip to true to display on the Projects page
+    show: true,  // ← flip to true to display on the Projects page
   },
   {
     title: "Pytorch-101",
@@ -545,7 +485,7 @@ export const projects: Project[] = [
     technologies: ["Python"],
     github: "https://github.com/KillerStrike17/EPAi",
     category: "Other",
-    show: false,  // ← flip to true to display on the Projects page
+    show: true,  // ← flip to true to display on the Projects page
   },
   {
     title: "EVA-5",
@@ -554,7 +494,7 @@ export const projects: Project[] = [
     technologies: ["Jupyter Notebook"],
     github: "https://github.com/KillerStrike17/EVA-5",
     category: "Other",
-    show: false,  // ← flip to true to display on the Projects page
+    show: true,  // ← flip to true to display on the Projects page
   },
   {
     title: "Quantum-Machine-Learning-with-Qiskit",
@@ -581,7 +521,7 @@ export const projects: Project[] = [
     technologies: ["Jupyter Notebook","ConvolutionalNeuralNetworks","Deeplearning","Keras","Machinelearning"],
     github: "https://github.com/KillerStrike17/10DaysofMLChallenge",
     category: "Other",
-    show: false,  // ← flip to true to display on the Projects page
+    show: true,  // ← flip to true to display on the Projects page
   },
   {
     title: "Shubham_Portfolio",
@@ -635,7 +575,7 @@ export const projects: Project[] = [
     technologies: ["Jupyter Notebook"],
     github: "https://github.com/KillerStrike17/Deep-Learning-for-Vision-Using-Tensorflow-Keras",
     category: "Other",
-    show: false,  // ← flip to true to display on the Projects page
+    show: true,  // ← flip to true to display on the Projects page
   },
   {
     title: "Deep-Reinforcement-Learning",
@@ -662,7 +602,7 @@ export const projects: Project[] = [
     technologies: ["Python"],
     github: "https://github.com/KillerStrike17/Competitive_Programming",
     category: "Other",
-    show: false,  // ← flip to true to display on the Projects page
+    show: true,  // ← flip to true to display on the Projects page
   },
   {
     title: "ML-Dictionary",
@@ -707,7 +647,7 @@ export const projects: Project[] = [
     technologies: ["GitHub"],
     github: "https://github.com/KillerStrike17/KSP-IPH-2019-table30",
     category: "Other",
-    show: false,  // ← flip to true to display on the Projects page
+    show: true,  // ← flip to true to display on the Projects page
   },
   {
     title: "EVA---Session-10-VGG",
