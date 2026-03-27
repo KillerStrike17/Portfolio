@@ -24,7 +24,7 @@ export const projects: Project[] = [
     technologies: ["TypeScript"],
     github: "https://github.com/KillerStrike17/Portfolio",
     demo: "https://portfolio-nine-opal-ryitllc5q9.vercel.app",
-    category: "Other",
+    category: "Web Development",
     show: true,  // ← flip to true to display on the Projects page
   },
   {
@@ -33,7 +33,7 @@ export const projects: Project[] = [
     image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&h=300&fit=crop&auto=format",
     technologies: ["GitHub"],
     github: "https://github.com/KillerStrike17/KillerStrike17",
-    category: "Other",
+    category: "Personal",
     show: false,  // ← flip to true to display on the Projects page
   },
   {
@@ -42,7 +42,7 @@ export const projects: Project[] = [
     image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=500&h=300&fit=crop&auto=format",
     technologies: ["Python"],
     github: "https://github.com/KillerStrike17/A2A-Agent2Agent-Protocol-demo",
-    category: "Other",
+    category: "AI/ML",
     show: true,  // ← flip to true to display on the Projects page
   },
   {
@@ -51,7 +51,7 @@ export const projects: Project[] = [
     image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=500&h=300&fit=crop&auto=format",
     technologies: ["Python"],
     github: "https://github.com/KillerStrike17/CP-Journey",
-    category: "Other",
+    category: "Competitive Programming",
     show: true,  // ← flip to true to display on the Projects page
   },
   {
@@ -60,7 +60,7 @@ export const projects: Project[] = [
     image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&h=300&fit=crop&auto=format",
     technologies: ["GitHub"],
     github: "https://github.com/KillerStrike17/vlm-from-scratch",
-    category: "Other",
+    category: "AI/ML",
     show: false,  // ← flip to true to display on the Projects page
   },
   {
@@ -69,7 +69,7 @@ export const projects: Project[] = [
     image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=500&h=300&fit=crop&auto=format",
     technologies: ["Python"],
     github: "https://github.com/KillerStrike17/A2A-Protocol-with-Neo4j",
-    category: "Other",
+    category: "AI/ML",
     show: true,  // ← flip to true to display on the Projects page
   },
   {
@@ -78,7 +78,7 @@ export const projects: Project[] = [
     image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&h=300&fit=crop&auto=format",
     technologies: ["GitHub"],
     github: "https://github.com/KillerStrike17/Google-Agent-Development-Kit-Deep-Dive",
-    category: "Other",
+    category: "AI/ML",
     show: true,  // ← flip to true to display on the Projects page
   },
   {
@@ -87,7 +87,7 @@ export const projects: Project[] = [
     image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=500&h=300&fit=crop&auto=format",
     technologies: ["Python"],
     github: "https://github.com/KillerStrike17/A2A-Agent2Agent-Protocol-Gitex-2025",
-    category: "Other",
+    category: "AI/ML",
     show: true,  // ← flip to true to display on the Projects page
   },
   {
@@ -96,7 +96,7 @@ export const projects: Project[] = [
     image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&h=300&fit=crop&auto=format",
     technologies: ["GitHub"],
     github: "https://github.com/KillerStrike17/Google-ADK-with-MCP",
-    category: "Other",
+    category: "AI/ML",
     show: false,  // ← flip to true to display on the Projects page
   },
   {
@@ -105,7 +105,7 @@ export const projects: Project[] = [
     image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=500&h=300&fit=crop&auto=format",
     technologies: ["Python"],
     github: "https://github.com/KillerStrike17/mcp_101",
-    category: "Other",
+    category: "AI/ML",
     show: false,  // ← flip to true to display on the Projects page
   },
   {
@@ -115,7 +115,7 @@ export const projects: Project[] = [
     technologies: ["SCSS","Css","Html","Js","PortfolioWebsite"],
     github: "https://github.com/KillerStrike17/KillerStrike17.github.io",
     demo: "https://killer-strike17-github-io.vercel.app",
-    category: "Other",
+    category: "Web Development",
     show: false,  // ← flip to true to display on the Projects page
   },
   {
@@ -124,7 +124,7 @@ export const projects: Project[] = [
     image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=500&h=300&fit=crop&auto=format",
     technologies: ["Python"],
     github: "https://github.com/KillerStrike17/hydra_lightning_with_github_actions",
-    category: "Other",
+    category: "AI/ML",
     show: false,  // ← flip to true to display on the Projects page
   },
   {
@@ -133,7 +133,7 @@ export const projects: Project[] = [
     image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=500&h=300&fit=crop&auto=format",
     technologies: ["Python"],
     github: "https://github.com/KillerStrike17/PromoGenie",
-    category: "Other",
+    category: "AI/ML",
     show: true,  // ← flip to true to display on the Projects page
   },
   {
@@ -142,7 +142,7 @@ export const projects: Project[] = [
     image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=500&h=300&fit=crop&auto=format",
     technologies: ["Python"],
     github: "https://github.com/KillerStrike17/lightning-template-hydra",
-    category: "Other",
+    category: "AI/ML",
     show: false,  // ← flip to true to display on the Projects page
   },
   {
@@ -151,7 +151,7 @@ export const projects: Project[] = [
     image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&h=300&fit=crop&auto=format",
     technologies: ["GitHub"],
     github: "https://github.com/KillerStrike17/Research-paper-Summary",
-    category: "Other",
+    category: "Research",
     show: false,  // ← flip to true to display on the Projects page
   },
   {
@@ -160,7 +160,7 @@ export const projects: Project[] = [
     image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=500&h=300&fit=crop&auto=format",
     technologies: ["JavaScript"],
     github: "https://github.com/KillerStrike17/3d-portfolio",
-    category: "Other",
+    category: "Web Development",
     show: false,  // ← flip to true to display on the Projects page
   },
   {
@@ -169,7 +169,7 @@ export const projects: Project[] = [
     image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&h=300&fit=crop&auto=format",
     technologies: ["GitHub"],
     github: "https://github.com/KillerStrike17/Stable-Diffusion-with-custom-styles",
-    category: "Other",
+    category: "AI/ML",
     show: true,  // ← flip to true to display on the Projects page
   },
   {
@@ -178,7 +178,7 @@ export const projects: Project[] = [
     image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&h=300&fit=crop&auto=format",
     technologies: ["GitHub"],
     github: "https://github.com/KillerStrike17/FineTuning_LLMs",
-    category: "Other",
+    category: "AI/ML",
     show: false,  // ← flip to true to display on the Projects page
   },
   {
@@ -187,7 +187,7 @@ export const projects: Project[] = [
     image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&h=300&fit=crop&auto=format",
     technologies: ["Jupyter Notebook"],
     github: "https://github.com/KillerStrike17/Law-RAG",
-    category: "Other",
+    category: "AI/ML",
     show: true,  // ← flip to true to display on the Projects page
   },
   {
@@ -196,7 +196,7 @@ export const projects: Project[] = [
     image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&h=300&fit=crop&auto=format",
     technologies: ["Jupyter Notebook"],
     github: "https://github.com/KillerStrike17/LLM-Ops",
-    category: "Other",
+    category: "MLOps",
     show: false,  // ← flip to true to display on the Projects page
   },
   {
@@ -205,7 +205,7 @@ export const projects: Project[] = [
     image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&h=300&fit=crop&auto=format",
     technologies: ["GitHub"],
     github: "https://github.com/KillerStrike17/UNet-from-Scratch---Pytorch",
-    category: "Other",
+    category: "Computer Vision",
     show: false,  // ← flip to true to display on the Projects page
   },
   {
@@ -214,7 +214,7 @@ export const projects: Project[] = [
     image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=500&h=300&fit=crop&auto=format",
     technologies: ["Python"],
     github: "https://github.com/KillerStrike17/ClipClip",
-    category: "Other",
+    category: "AI/ML",
     show: true,  // ← flip to true to display on the Projects page
   },
   {
@@ -223,7 +223,7 @@ export const projects: Project[] = [
     image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&h=300&fit=crop&auto=format",
     technologies: ["GitHub"],
     github: "https://github.com/KillerStrike17/Pretrained-Transformers---BERT--ViT-and-GPT",
-    category: "Other",
+    category: "AI/ML",
     show: false,  // ← flip to true to display on the Projects page
   },
   {
@@ -232,7 +232,7 @@ export const projects: Project[] = [
     image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&h=300&fit=crop&auto=format",
     technologies: ["Jupyter Notebook"],
     github: "https://github.com/KillerStrike17/Transformers-from-scratch",
-    category: "Other",
+    category: "AI/ML",
     show: true,  // ← flip to true to display on the Projects page
   },
   {
@@ -241,7 +241,7 @@ export const projects: Project[] = [
     image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&h=300&fit=crop&auto=format",
     technologies: ["Jupyter Notebook"],
     github: "https://github.com/KillerStrike17/HuggingFace-AudioTransformers",
-    category: "Other",
+    category: "AI/ML",
     show: false,  // ← flip to true to display on the Projects page
   },
   {
@@ -250,7 +250,7 @@ export const projects: Project[] = [
     image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&h=300&fit=crop&auto=format",
     technologies: ["Jupyter Notebook"],
     github: "https://github.com/KillerStrike17/YOLO-v3-from-Scratch",
-    category: "Other",
+    category: "Computer Vision",
     show: true,  // ← flip to true to display on the Projects page
   },
   {
@@ -259,7 +259,7 @@ export const projects: Project[] = [
     image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&h=300&fit=crop&auto=format",
     technologies: ["Jupyter Notebook"],
     github: "https://github.com/KillerStrike17/MLOps-with-ZenML",
-    category: "Other",
+    category: "MLOps",
     show: false,  // ← flip to true to display on the Projects page
   },
   {
@@ -268,7 +268,7 @@ export const projects: Project[] = [
     image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&h=300&fit=crop&auto=format",
     technologies: ["Jupyter Notebook"],
     github: "https://github.com/KillerStrike17/Media.net-Creditcard",
-    category: "Other",
+    category: "AI/ML",
     show: false,  // ← flip to true to display on the Projects page
   },
   {
@@ -277,7 +277,7 @@ export const projects: Project[] = [
     image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&h=300&fit=crop&auto=format",
     technologies: ["Jupyter Notebook"],
     github: "https://github.com/KillerStrike17/DavidNet-with-Pytorch-Lightning",
-    category: "Other",
+    category: "AI/ML",
     show: false,  // ← flip to true to display on the Projects page
   },
   {
@@ -286,7 +286,7 @@ export const projects: Project[] = [
     image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&h=300&fit=crop&auto=format",
     technologies: ["Jupyter Notebook"],
     github: "https://github.com/KillerStrike17/Resnet-with-GradCam-Pyotrch",
-    category: "Other",
+    category: "Computer Vision",
     show: false,  // ← flip to true to display on the Projects page
   },
   {
@@ -295,7 +295,7 @@ export const projects: Project[] = [
     image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=500&h=300&fit=crop&auto=format",
     technologies: ["Python"],
     github: "https://github.com/KillerStrike17/DeepLib",
-    category: "Other",
+    category: "AI/ML",
     show: false,  // ← flip to true to display on the Projects page
   },
   {
@@ -304,7 +304,7 @@ export const projects: Project[] = [
     image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=500&h=300&fit=crop&auto=format",
     technologies: ["Python"],
     github: "https://github.com/KillerStrike17/Readme.md-To-Medium-via-Medium-API",
-    category: "Other",
+    category: "Tools",
     show: false,  // ← flip to true to display on the Projects page
   },
   {
@@ -313,7 +313,7 @@ export const projects: Project[] = [
     image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&h=300&fit=crop&auto=format",
     technologies: ["Jupyter Notebook"],
     github: "https://github.com/KillerStrike17/LLMs-in-Production",
-    category: "Other",
+    category: "AI/ML",
     show: false,  // ← flip to true to display on the Projects page
   },
   {
@@ -322,7 +322,7 @@ export const projects: Project[] = [
     image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&h=300&fit=crop&auto=format",
     technologies: ["Jupyter Notebook"],
     github: "https://github.com/KillerStrike17/DeepLake-Langchain",
-    category: "Other",
+    category: "AI/ML",
     show: false,  // ← flip to true to display on the Projects page
   },
   {
@@ -331,7 +331,7 @@ export const projects: Project[] = [
     image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&h=300&fit=crop&auto=format",
     technologies: ["Jupyter Notebook"],
     github: "https://github.com/KillerStrike17/AI-QR-Code",
-    category: "Other",
+    category: "AI/ML",
     show: true,  // ← flip to true to display on the Projects page
   },
   {
@@ -340,7 +340,7 @@ export const projects: Project[] = [
     image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&h=300&fit=crop&auto=format",
     technologies: ["GitHub"],
     github: "https://github.com/KillerStrike17/Song-Recommendation-System",
-    category: "Other",
+    category: "AI/ML",
     show: false,  // ← flip to true to display on the Projects page
   },
   {
@@ -349,7 +349,7 @@ export const projects: Project[] = [
     image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&h=300&fit=crop&auto=format",
     technologies: ["GitHub"],
     github: "https://github.com/KillerStrike17/Understanding-Github-Repos-with-LLMs",
-    category: "Other",
+    category: "AI/ML",
     show: false,  // ← flip to true to display on the Projects page
   },
   {
@@ -358,7 +358,7 @@ export const projects: Project[] = [
     image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=500&h=300&fit=crop&auto=format",
     technologies: ["Python"],
     github: "https://github.com/KillerStrike17/Video-Summarizer-with-LLMs",
-    category: "Other",
+    category: "AI/ML",
     show: false,  // ← flip to true to display on the Projects page
   },
   {
@@ -367,7 +367,7 @@ export const projects: Project[] = [
     image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&h=300&fit=crop&auto=format",
     technologies: ["Jupyter Notebook"],
     github: "https://github.com/KillerStrike17/DavidNet-Cifar10-Dawn-Benchmark",
-    category: "Other",
+    category: "AI/ML",
     show: true,  // ← flip to true to display on the Projects page
   },
   {
@@ -376,7 +376,7 @@ export const projects: Project[] = [
     image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&h=300&fit=crop&auto=format",
     technologies: ["GitHub"],
     github: "https://github.com/KillerStrike17/My-IT-Assistant",
-    category: "Other",
+    category: "AI/ML",
     show: false,  // ← flip to true to display on the Projects page
   },
   {
@@ -385,7 +385,7 @@ export const projects: Project[] = [
     image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&h=300&fit=crop&auto=format",
     technologies: ["Jupyter Notebook"],
     github: "https://github.com/KillerStrike17/Tabular-Data-with-LLMs",
-    category: "Other",
+    category: "AI/ML",
     show: false,  // ← flip to true to display on the Projects page
   },
   {
@@ -394,7 +394,7 @@ export const projects: Project[] = [
     image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&h=300&fit=crop&auto=format",
     technologies: ["Jupyter Notebook"],
     github: "https://github.com/KillerStrike17/85-Cifar-10-using-depthwise-seperable-and-dilated-kernels",
-    category: "Other",
+    category: "AI/ML",
     show: false,  // ← flip to true to display on the Projects page
   },
   {
@@ -403,7 +403,7 @@ export const projects: Project[] = [
     image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&h=300&fit=crop&auto=format",
     technologies: ["Jupyter Notebook"],
     github: "https://github.com/KillerStrike17/News-Summarization-with-LLM",
-    category: "Other",
+    category: "AI/ML",
     show: false,  // ← flip to true to display on the Projects page
   },
   {
@@ -412,7 +412,7 @@ export const projects: Project[] = [
     image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&h=300&fit=crop&auto=format",
     technologies: ["Jupyter Notebook"],
     github: "https://github.com/KillerStrike17/BatchNorm-GroupNorm-and-LayerNom-in-Pytorch",
-    category: "Other",
+    category: "AI/ML",
     show: false,  // ← flip to true to display on the Projects page
   },
   {
@@ -421,7 +421,7 @@ export const projects: Project[] = [
     image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&h=300&fit=crop&auto=format",
     technologies: ["Jupyter Notebook"],
     github: "https://github.com/KillerStrike17/MNIST-99.4-under-8k-parameters",
-    category: "Other",
+    category: "AI/ML",
     show: true,  // ← flip to true to display on the Projects page
   },
   {
@@ -430,7 +430,7 @@ export const projects: Project[] = [
     image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&h=300&fit=crop&auto=format",
     technologies: ["Jupyter Notebook"],
     github: "https://github.com/KillerStrike17/MNIST-Pytorch-99.4-under-10k-parameters",
-    category: "Other",
+    category: "AI/ML",
     show: true,  // ← flip to true to display on the Projects page
   },
   {
@@ -439,7 +439,7 @@ export const projects: Project[] = [
     image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&h=300&fit=crop&auto=format",
     technologies: ["Jupyter Notebook"],
     github: "https://github.com/KillerStrike17/Pytorch-101",
-    category: "Other",
+    category: "AI/ML",
     show: false,  // ← flip to true to display on the Projects page
   },
   {
@@ -448,7 +448,7 @@ export const projects: Project[] = [
     image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&h=300&fit=crop&auto=format",
     technologies: ["GitHub"],
     github: "https://github.com/KillerStrike17/GraphicalNeuralNetwork",
-    category: "Other",
+    category: "AI/ML",
     show: false,  // ← flip to true to display on the Projects page
   },
   {
@@ -457,7 +457,7 @@ export const projects: Project[] = [
     image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=500&h=300&fit=crop&auto=format",
     technologies: ["Python"],
     github: "https://github.com/KillerStrike17/DeepQuiz-Telegram-Bot",
-    category: "Other",
+    category: "AI/ML",
     show: false,  // ← flip to true to display on the Projects page
   },
   {
@@ -466,7 +466,7 @@ export const projects: Project[] = [
     image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&h=300&fit=crop&auto=format",
     technologies: ["Jupyter Notebook"],
     github: "https://github.com/KillerStrike17/PyDeNN",
-    category: "Other",
+    category: "AI/ML",
     show: false,  // ← flip to true to display on the Projects page
   },
   {
@@ -475,7 +475,7 @@ export const projects: Project[] = [
     image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&h=300&fit=crop&auto=format",
     technologies: ["CSS"],
     github: "https://github.com/KillerStrike17/Killerstrike_old_portfolio_site",
-    category: "Other",
+    category: "Web Development",
     show: false,  // ← flip to true to display on the Projects page
   },
   {
@@ -484,7 +484,7 @@ export const projects: Project[] = [
     image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=500&h=300&fit=crop&auto=format",
     technologies: ["Python"],
     github: "https://github.com/KillerStrike17/EPAi",
-    category: "Other",
+    category: "AI/ML",
     show: true,  // ← flip to true to display on the Projects page
   },
   {
@@ -493,7 +493,7 @@ export const projects: Project[] = [
     image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&h=300&fit=crop&auto=format",
     technologies: ["Jupyter Notebook"],
     github: "https://github.com/KillerStrike17/EVA-5",
-    category: "Other",
+    category: "AI/ML",
     show: true,  // ← flip to true to display on the Projects page
   },
   {
@@ -502,7 +502,7 @@ export const projects: Project[] = [
     image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&h=300&fit=crop&auto=format",
     technologies: ["Jupyter Notebook","Ibmq","Qiskit","Qml","Quantum"],
     github: "https://github.com/KillerStrike17/Quantum-Machine-Learning-with-Qiskit",
-    category: "Other",
+    category: "Quantum Computing",
     show: false,  // ← flip to true to display on the Projects page
   },
   {
@@ -511,7 +511,7 @@ export const projects: Project[] = [
     image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&h=300&fit=crop&auto=format",
     technologies: ["GitHub"],
     github: "https://github.com/KillerStrike17/Awesome-Quantum",
-    category: "Other",
+    category: "Quantum Computing",
     show: false,  // ← flip to true to display on the Projects page
   },
   {
@@ -520,7 +520,7 @@ export const projects: Project[] = [
     image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&h=300&fit=crop&auto=format",
     technologies: ["Jupyter Notebook","ConvolutionalNeuralNetworks","Deeplearning","Keras","Machinelearning"],
     github: "https://github.com/KillerStrike17/10DaysofMLChallenge",
-    category: "Other",
+    category: "AI/ML",
     show: true,  // ← flip to true to display on the Projects page
   },
   {
@@ -529,7 +529,7 @@ export const projects: Project[] = [
     image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&h=300&fit=crop&auto=format",
     technologies: ["GitHub"],
     github: "https://github.com/KillerStrike17/Shubham_Portfolio",
-    category: "Other",
+    category: "Web Development",
     show: false,  // ← flip to true to display on the Projects page
   },
   {
@@ -538,7 +538,7 @@ export const projects: Project[] = [
     image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&h=300&fit=crop&auto=format",
     technologies: ["GitHub"],
     github: "https://github.com/KillerStrike17/MyCV",
-    category: "Other",
+    category: "Personal",
     show: false,  // ← flip to true to display on the Projects page
   },
   {
@@ -547,7 +547,7 @@ export const projects: Project[] = [
     image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&h=300&fit=crop&auto=format",
     technologies: ["Jupyter Notebook","Qiskit","QuantumComputing"],
     github: "https://github.com/KillerStrike17/Quantum-Computing",
-    category: "Other",
+    category: "Quantum Computing",
     show: false,  // ← flip to true to display on the Projects page
   },
   {
@@ -556,7 +556,7 @@ export const projects: Project[] = [
     image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=500&h=300&fit=crop&auto=format",
     technologies: ["Python"],
     github: "https://github.com/KillerStrike17/100DaysofML",
-    category: "Other",
+    category: "AI/ML",
     show: false,  // ← flip to true to display on the Projects page
   },
   {
@@ -565,7 +565,7 @@ export const projects: Project[] = [
     image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&h=300&fit=crop&auto=format",
     technologies: ["Jupyter Notebook","ArtificialIntelligence","ConvolutionalNeuralNetworks","Machinelearning","Neuralnetwork"],
     github: "https://github.com/KillerStrike17/Learn_With_Shubham",
-    category: "Other",
+    category: "Education",
     show: false,  // ← flip to true to display on the Projects page
   },
   {
@@ -574,7 +574,7 @@ export const projects: Project[] = [
     image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&h=300&fit=crop&auto=format",
     technologies: ["Jupyter Notebook"],
     github: "https://github.com/KillerStrike17/Deep-Learning-for-Vision-Using-Tensorflow-Keras",
-    category: "Other",
+    category: "Computer Vision",
     show: true,  // ← flip to true to display on the Projects page
   },
   {
@@ -583,7 +583,7 @@ export const projects: Project[] = [
     image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=500&h=300&fit=crop&auto=format",
     technologies: ["Python"],
     github: "https://github.com/KillerStrike17/Deep-Reinforcement-Learning",
-    category: "Other",
+    category: "Reinforcement Learning",
     show: false,  // ← flip to true to display on the Projects page
   },
   {
@@ -592,7 +592,7 @@ export const projects: Project[] = [
     image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=500&h=300&fit=crop&auto=format",
     technologies: ["Python"],
     github: "https://github.com/KillerStrike17/AI-Edge-OpenVinoToolkit",
-    category: "Other",
+    category: "Edge AI",
     show: false,  // ← flip to true to display on the Projects page
   },
   {
@@ -601,7 +601,7 @@ export const projects: Project[] = [
     image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=500&h=300&fit=crop&auto=format",
     technologies: ["Python"],
     github: "https://github.com/KillerStrike17/Competitive_Programming",
-    category: "Other",
+    category: "Competitive Programming",
     show: true,  // ← flip to true to display on the Projects page
   },
   {
@@ -610,7 +610,7 @@ export const projects: Project[] = [
     image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&h=300&fit=crop&auto=format",
     technologies: ["GitHub"],
     github: "https://github.com/KillerStrike17/ML-Dictionary",
-    category: "Other",
+    category: "Education",
     show: false,  // ← flip to true to display on the Projects page
   },
   {
@@ -619,7 +619,7 @@ export const projects: Project[] = [
     image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&h=300&fit=crop&auto=format",
     technologies: ["Jupyter Notebook"],
     github: "https://github.com/KillerStrike17/DeepLearning_for_NLP",
-    category: "Other",
+    category: "NLP",
     show: false,  // ← flip to true to display on the Projects page
   },
   {
@@ -628,7 +628,7 @@ export const projects: Project[] = [
     image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&h=300&fit=crop&auto=format",
     technologies: ["Jupyter Notebook"],
     github: "https://github.com/KillerStrike17/Intro_with_pytorch",
-    category: "Other",
+    category: "AI/ML",
     show: false,  // ← flip to true to display on the Projects page
   },
   {
@@ -637,7 +637,7 @@ export const projects: Project[] = [
     image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&h=300&fit=crop&auto=format",
     technologies: ["Jupyter Notebook","AndroidStudio","Azure","Flask","Stargan"],
     github: "https://github.com/KillerStrike17/Hacknight-5.0-StayConnected---Devengers",
-    category: "Other",
+    category: "Hackathon",
     show: false,  // ← flip to true to display on the Projects page
   },
   {
@@ -646,7 +646,7 @@ export const projects: Project[] = [
     image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&h=300&fit=crop&auto=format",
     technologies: ["GitHub"],
     github: "https://github.com/KillerStrike17/KSP-IPH-2019-table30",
-    category: "Other",
+    category: "Hackathon",
     show: true,  // ← flip to true to display on the Projects page
   },
   {
@@ -655,7 +655,7 @@ export const projects: Project[] = [
     image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&h=300&fit=crop&auto=format",
     technologies: ["Jupyter Notebook"],
     github: "https://github.com/KillerStrike17/EVA---Session-10-VGG",
-    category: "Other",
+    category: "Computer Vision",
     show: false,  // ← flip to true to display on the Projects page
   },
   // ── Add more projects below. Copy a block above, set show: true to display ──
