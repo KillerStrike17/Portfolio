@@ -1,0 +1,48 @@
+name: 🔄 Sync GitHub Repos to Portfolio
+
+on:
+  schedule:
+    # Runs every day at 00:00 UTC
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+    # Allow triggering manually from the GitHub Actions tab
+
+permissions:
+  contents: write   # needed to commit back to the repo
+
+jobs:
+  sync:
+    name: Sync public repos → projects.config.ts
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run sync script
+        env:
+          # ⚠️  IMPORTANT: Set PORTFOLIO_GITHUB_USERNAME in your repo's
+          #    Settings → Secrets and variables → Actions → Variables
+          #    (Repository variable, NOT a secret)
+          GITHUB_USERNAME: ${{ vars.PORTFOLIO_GITHUB_USERNAME }}
+          # GITHUB_TOKEN is provided automatically — no setup needed
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node scripts/sync-github-repos.mjs
+
+      - name: Commit changes (if any new repos were found)
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add src/data/projects.config.ts
+          # Only commit if the file actually changed
+          if git diff --staged --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "chore: auto-sync new GitHub repos to config [skip ci]"
+            git push
+          fi
