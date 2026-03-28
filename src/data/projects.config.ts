@@ -20,7 +20,7 @@ export const projects: Project[] = [
   {
     title: "Portfolio",
     description: "Portfolio — a public GitHub project.",
-    image: "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?w=500&h=300&fit=crop&auto=format",
+    image: "https://raw.githubusercontent.com/KillerStrike17/Portfolio/main/Assets/images/acd-bengaluru-2025/PHOTO-2026-03-22-21-28-17%2025.jpg",
     technologies: ["TypeScript"],
     github: "https://github.com/KillerStrike17/Portfolio",
     demo: "https://portfolio-nine-opal-ryitllc5q9.vercel.app",
@@ -39,7 +39,7 @@ export const projects: Project[] = [
   {
     title: "A2A-Agent2Agent-Protocol-demo",
     description: "A2A-Agent2Agent-Protocol-demo — a public GitHub project.",
-    image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=500&h=300&fit=crop&auto=format",
+    image: "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?w=500&h=300&fit=crop&auto=format",
     technologies: ["Python"],
     github: "https://github.com/KillerStrike17/A2A-Agent2Agent-Protocol-demo",
     category: "AI/ML",
@@ -48,7 +48,7 @@ export const projects: Project[] = [
   {
     title: "CP-Journey",
     description: "This is my hardwork and dedication to get into Google, Facebook, Microsoft, Amazon, Apple and others",
-    image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=500&h=300&fit=crop&auto=format",
+    image: "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?w=500&h=300&fit=crop&auto=format",
     technologies: ["Python"],
     github: "https://github.com/KillerStrike17/CP-Journey",
     category: "Competitive Programming",
@@ -66,7 +66,7 @@ export const projects: Project[] = [
   {
     title: "A2A-Protocol-with-Neo4j",
     description: "A2A-Protocol-with-Neo4j — a public GitHub project.",
-    image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=500&h=300&fit=crop&auto=format",
+    image: "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?w=500&h=300&fit=crop&auto=format",
     technologies: ["Python"],
     github: "https://github.com/KillerStrike17/A2A-Protocol-with-Neo4j",
     category: "AI/ML",
@@ -75,7 +75,7 @@ export const projects: Project[] = [
   {
     title: "Google-Agent-Development-Kit-Deep-Dive",
     description: "Google-Agent-Development-Kit-Deep-Dive — a public GitHub project.",
-    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&h=300&fit=crop&auto=format",
+    image: "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?w=500&h=300&fit=crop&auto=format",
     technologies: ["GitHub"],
     github: "https://github.com/KillerStrike17/Google-Agent-Development-Kit-Deep-Dive",
     category: "AI/ML",
@@ -84,7 +84,7 @@ export const projects: Project[] = [
   {
     title: "A2A-Agent2Agent-Protocol-Gitex-2025",
     description: "A2A-Agent2Agent-Protocol-Gitex-2025 — a public GitHub project.",
-    image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=500&h=300&fit=crop&auto=format",
+    image: "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?w=500&h=300&fit=crop&auto=format",
     technologies: ["Python"],
     github: "https://github.com/KillerStrike17/A2A-Agent2Agent-Protocol-Gitex-2025",
     category: "AI/ML",
@@ -130,7 +130,7 @@ export const projects: Project[] = [
   {
     title: "PromoGenie",
     description: "Unleashing Creativity, One Banner at a Time!",
-    image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=500&h=300&fit=crop&auto=format",
+    image: "https://raw.githubusercontent.com/KillerStrike17/PromoGenie/main/Assets/Architecture/Architecture%20Diagram.png",
     technologies: ["Python"],
     github: "https://github.com/KillerStrike17/PromoGenie",
     category: "AI/ML",
@@ -166,7 +166,7 @@ export const projects: Project[] = [
   {
     title: "Stable-Diffusion-with-custom-styles",
     description: "Stable-Diffusion-with-custom-styles — a public GitHub project.",
-    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&h=300&fit=crop&auto=format",
+    image: "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?w=500&h=300&fit=crop&auto=format",
     technologies: ["GitHub"],
     github: "https://github.com/KillerStrike17/Stable-Diffusion-with-custom-styles",
     category: "AI/ML",
@@ -184,7 +184,7 @@ export const projects: Project[] = [
   {
     title: "Law-RAG",
     description: "Law-RAG — a public GitHub project.",
-    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&h=300&fit=crop&auto=format",
+    image: "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?w=500&h=300&fit=crop&auto=format",
     technologies: ["Jupyter Notebook"],
     github: "https://github.com/KillerStrike17/Law-RAG",
     category: "AI/ML",
@@ -211,7 +211,7 @@ export const projects: Project[] = [
   {
     title: "ClipClip",
     description: "ClipClip — a public GitHub project.",
-    image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=500&h=300&fit=crop&auto=format",
+    image: "https://raw.githubusercontent.com/KillerStrike17/ClipClip/main/Assets/cat.jpg",
     technologies: ["Python"],
     github: "https://github.com/KillerStrike17/ClipClip",
     category: "AI/ML",
@@ -229,7 +229,7 @@ export const projects: Project[] = [
   {
     title: "Transformers-from-scratch",
     description: "Transformers-from-scratch — a public GitHub project.",
-    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&h=300&fit=crop&auto=format",
+    image: "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?w=500&h=300&fit=crop&auto=format",
     technologies: ["Jupyter Notebook"],
     github: "https://github.com/KillerStrike17/Transformers-from-scratch",
     category: "AI/ML",
@@ -247,7 +247,7 @@ export const projects: Project[] = [
   {
     title: "YOLO-v3-from-Scratch",
     description: "YOLO-v3-from-Scratch — a public GitHub project.",
-    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&h=300&fit=crop&auto=format",
+    image: "https://raw.githubusercontent.com/KillerStrike17/YOLO-v3-from-Scratch/main/image.png",
     technologies: ["Jupyter Notebook"],
     github: "https://github.com/KillerStrike17/YOLO-v3-from-Scratch",
     category: "Computer Vision",
@@ -328,7 +328,7 @@ export const projects: Project[] = [
   {
     title: "AI-QR-Code",
     description: "AI-QR-Code — a public GitHub project.",
-    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&h=300&fit=crop&auto=format",
+    image: "https://raw.githubusercontent.com/KillerStrike17/AI-QR-Code/main/Output/Angel.png",
     technologies: ["Jupyter Notebook"],
     github: "https://github.com/KillerStrike17/AI-QR-Code",
     category: "AI/ML",
@@ -364,7 +364,7 @@ export const projects: Project[] = [
   {
     title: "DavidNet-Cifar10-Dawn-Benchmark",
     description: "DavidNet-Cifar10-Dawn-Benchmark — a public GitHub project.",
-    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&h=300&fit=crop&auto=format",
+    image: "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?w=500&h=300&fit=crop&auto=format",
     technologies: ["Jupyter Notebook"],
     github: "https://github.com/KillerStrike17/DavidNet-Cifar10-Dawn-Benchmark",
     category: "AI/ML",
@@ -418,7 +418,7 @@ export const projects: Project[] = [
   {
     title: "MNIST-99.4-under-8k-parameters",
     description: "MNIST-99.4-under-8k-parameters — a public GitHub project.",
-    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&h=300&fit=crop&auto=format",
+    image: "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?w=500&h=300&fit=crop&auto=format",
     technologies: ["Jupyter Notebook"],
     github: "https://github.com/KillerStrike17/MNIST-99.4-under-8k-parameters",
     category: "AI/ML",
@@ -427,7 +427,7 @@ export const projects: Project[] = [
   {
     title: "MNIST-Pytorch-99.4-under-10k-parameters",
     description: "MNIST-Pytorch-99.4-under-10k-parameters — a public GitHub project.",
-    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&h=300&fit=crop&auto=format",
+    image: "https://raw.githubusercontent.com/KillerStrike17/MNIST-Pytorch-99.4-under-10k-parameters/main/Assets/Backprop_v1.PNG",
     technologies: ["Jupyter Notebook"],
     github: "https://github.com/KillerStrike17/MNIST-Pytorch-99.4-under-10k-parameters",
     category: "AI/ML",
@@ -481,7 +481,7 @@ export const projects: Project[] = [
   {
     title: "EPAi",
     description: "EPAi — a public GitHub project.",
-    image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=500&h=300&fit=crop&auto=format",
+    image: "https://raw.githubusercontent.com/KillerStrike17/EPAi/master/02.%20Object%20Mutability%20and%20Interning/Assets/output_result_format.png",
     technologies: ["Python"],
     github: "https://github.com/KillerStrike17/EPAi",
     category: "AI/ML",
@@ -490,7 +490,7 @@ export const projects: Project[] = [
   {
     title: "EVA-5",
     description: "EVA-5 — a public GitHub project.",
-    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&h=300&fit=crop&auto=format",
+    image: "https://raw.githubusercontent.com/KillerStrike17/EVA-5/master/04.%20Architecture%20Basics/Assets/Model_1_Architecture.jpg",
     technologies: ["Jupyter Notebook"],
     github: "https://github.com/KillerStrike17/EVA-5",
     category: "AI/ML",
@@ -517,7 +517,7 @@ export const projects: Project[] = [
   {
     title: "10DaysofMLChallenge",
     description: "Won the 10 Days ML Challenge hosted by Tensorflow User Group Mumbai. This Repository consists of the problem statements and their solutions developed by me.",
-    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&h=300&fit=crop&auto=format",
+    image: "https://raw.githubusercontent.com/KillerStrike17/10DaysofMLChallenge/master/Day5/Assets/GradCAM_output.png",
     technologies: ["Jupyter Notebook","ConvolutionalNeuralNetworks","Deeplearning","Keras","Machinelearning"],
     github: "https://github.com/KillerStrike17/10DaysofMLChallenge",
     category: "AI/ML",
@@ -571,7 +571,7 @@ export const projects: Project[] = [
   {
     title: "Deep-Learning-for-Vision-Using-Tensorflow-Keras",
     description: "This repository will guide in applying Deep Learning in Vision. It contains all the work I did in Tensorflow while learning.",
-    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&h=300&fit=crop&auto=format",
+    image: "https://raw.githubusercontent.com/KillerStrike17/Deep-Learning-for-Vision-Using-Tensorflow-Keras/master/10.%20LR%20Finder/Assets/gradcamoutput.png",
     technologies: ["Jupyter Notebook"],
     github: "https://github.com/KillerStrike17/Deep-Learning-for-Vision-Using-Tensorflow-Keras",
     category: "Computer Vision",
@@ -598,7 +598,7 @@ export const projects: Project[] = [
   {
     title: "Competitive_Programming",
     description: "This repository contains the solutions of the problems I solved in CP",
-    image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=500&h=300&fit=crop&auto=format",
+    image: "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?w=500&h=300&fit=crop&auto=format",
     technologies: ["Python"],
     github: "https://github.com/KillerStrike17/Competitive_Programming",
     category: "Competitive Programming",
@@ -643,7 +643,7 @@ export const projects: Project[] = [
   {
     title: "KSP-IPH-2019-table30",
     description: "Runners up in Facial Recognition category of All India Police Hackathon 2019",
-    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&h=300&fit=crop&auto=format",
+    image: "https://raw.githubusercontent.com/KillerStrike17/KSP-IPH-2019-table30/master/Results_Images/Face_recognition_Web_scraped_dataset/bum.jpg",
     technologies: ["GitHub"],
     github: "https://github.com/KillerStrike17/KSP-IPH-2019-table30",
     category: "Hackathon",
