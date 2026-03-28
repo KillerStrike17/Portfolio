@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 \"C:\\\\Users\\\\balen\\\\.claude\\\\skills\\\\ui-ux-pro-max\\\\scripts\\\\search.py\" \"data scientist portfolio AI ML tech personal brand dark premium\" --design-system -p \"Shubham Agnihotri Portfolio\" -f markdown)",
+      "Bash(py \"C:\\\\Users\\\\balen\\\\.claude\\\\skills\\\\ui-ux-pro-max\\\\scripts\\\\search.py\" \"data scientist portfolio AI ML tech personal brand dark premium\" --design-system -p \"Shubham Agnihotri Portfolio\" -f markdown)",
+      "Bash(py \"C:\\\\Users\\\\balen\\\\.claude\\\\skills\\\\ui-ux-pro-max\\\\scripts\\\\search.py\" \"dark glassmorphism neural network AI glow neon indigo violet\" --design-system -f markdown)",
+      "Bash(py \"C:\\\\Users\\\\balen\\\\.claude\\\\skills\\\\ui-ux-pro-max\\\\scripts\\\\search.py\" \"animation accessibility portfolio\" --domain ux)",
+      "Bash(npm run:*)",
+      "Bash(powershell -Command \"\\(Get-Content ''src\\\\pages\\\\About.tsx'' -Raw\\) -replace \"\"description: ''Passionate about decoding the world''s puzzles, riddles, and mathematical problems.'',\"\", \"\"description: \\\\\"\"Passionate about decoding the world''s puzzles, riddles, and mathematical problems.\\\\\"\",\"\" | Set-Content ''src\\\\pages\\\\About.tsx''\")"
+    ]
+  }
+}

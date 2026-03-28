@@ -19,7 +19,7 @@ import { ThemeProvider } from "./src/components/ThemeProvider";
 const queryClient = new QueryClient();
 
 const App = () => (
-  <ThemeProvider defaultTheme="system" storageKey="shub_theme_mode">
+  <ThemeProvider defaultTheme="dark" storageKey="shub_theme_mode">
     <HelmetProvider>
       <QueryClientProvider client={queryClient}>
         <TooltipProvider>

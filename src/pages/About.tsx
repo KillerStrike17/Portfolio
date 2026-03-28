@@ -3,54 +3,85 @@ import { BookOpen, Brain, Code, Gamepad2, Database, Rocket } from 'lucide-react'
 import SEO from '../components/SEO';
 import JsonLd from '../components/JsonLd';
 
+const stats = [
+  { value: '5+', label: 'Years Experience' },
+  { value: '₹50Cr+', label: 'Value Generated' },
+  { value: '500+', label: 'People Trained' },
+  { value: '3', label: 'Companies Led' },
+];
+
 const About = () => {
   const interests = [
     {
-      title: "Artificial Intelligence",
-      description: "Building scalable AI/ML solutions, working with GenAI, VLMs, and OCR to automate complex workflows.",
-      icon: <Brain className="text-primary" size={24} />
+      title: 'Artificial Intelligence',
+      description: 'Building scalable AI/ML solutions, working with GenAI, VLMs, and OCR to automate complex workflows.',
+      icon: Brain,
+      gradient: 'from-indigo-500 to-violet-500',
+      glow: 'group-hover:shadow-glow',
     },
     {
-      title: "Quantum Computing",
-      description: "Fascinated by the intersection of AI and QC as tools to shape a better, humane future.",
-      icon: <Rocket className="text-primary" size={24} />
+      title: 'Quantum Computing',
+      description: 'Fascinated by the intersection of AI and QC as tools to shape a better, humane future.',
+      icon: Rocket,
+      gradient: 'from-violet-500 to-pink-500',
+      glow: 'group-hover:shadow-glow-violet',
     },
     {
-      title: "Continuous Learning",
-      description: "Always reading research papers, exploring SOTA networks, and expanding my knowledge base.",
-      icon: <BookOpen className="text-primary" size={24} />
+      title: 'Continuous Learning',
+      description: 'Always reading research papers, exploring SOTA networks, and expanding my knowledge base.',
+      icon: BookOpen,
+      gradient: 'from-cyan-500 to-blue-500',
+      glow: 'group-hover:shadow-glow-cyan',
     },
     {
-      title: "Problem Solving",
+      title: 'Problem Solving',
       description: "Passionate about decoding the world's puzzles, riddles, and mathematical problems.",
-      icon: <Code className="text-primary" size={24} />
+      icon: Code,
+      gradient: 'from-emerald-500 to-cyan-500',
+      glow: 'group-hover:shadow-glow-cyan',
     },
     {
-      title: "Data Architecture",
-      description: "Designing end-to-end data pipelines and implementing robust MLOps practices.",
-      icon: <Database className="text-primary" size={24} />
+      title: 'Data Architecture',
+      description: 'Designing end-to-end data pipelines and implementing robust MLOps practices.',
+      icon: Database,
+      gradient: 'from-blue-500 to-indigo-500',
+      glow: 'group-hover:shadow-glow',
     },
     {
-      title: "Gaming & Sports",
+      title: 'Gaming & Sports',
       description: "Playing Football/Badminton, and enjoying Action-Adventure games like Assassin's Creed and The Witcher.",
-      icon: <Gamepad2 className="text-primary" size={24} />
-    }
+      icon: Gamepad2,
+      gradient: 'from-pink-500 to-rose-500',
+      glow: 'group-hover:shadow-glow-violet',
+    },
   ];
+
+  const itemVariant = {
+    hidden: { opacity: 0, y: 24 },
+    visible: (i: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5, delay: i * 0.08, ease: [0.25, 0.46, 0.45, 0.94] },
+    }),
+  };
 
   return (
     <div className="relative min-h-screen overflow-hidden">
-      {/* Decorative Background */}
-      <div className="absolute inset-0 pointer-events-none bg-gradient-to-br from-primary/5 via-background to-secondary/5 z-0">
-        <div className="absolute top-1/3 left-0 w-72 h-72 rounded-full blur-[100px] bg-primary/20 opacity-50"></div>
-        <div className="absolute bottom-1/4 right-0 w-96 h-96 rounded-full blur-[120px] bg-secondary/20 opacity-50"></div>
+      {/* Background */}
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute inset-0 mesh-bg opacity-50 dark:opacity-100" />
+        <div className="absolute top-0 left-1/3 w-[500px] h-[500px] bg-indigo-500/10 rounded-full blur-[120px] animate-pulse-slow" />
+        <div
+          className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-cyan-500/10 rounded-full blur-[100px] animate-pulse-slow"
+          style={{ animationDelay: '3s' }}
+        />
       </div>
 
-      <SEO 
+      <SEO
         title="About Shubham Agnihotri | Background & Interests"
         description="Learn about Shubham Agnihotri's background, interests, and journey as a Senior Data Scientist and AI enthusiast."
         keywords="about Shubham Agnihotri, data scientist, AI enthusiast, machine learning, quantum computing"
       />
-      
       <JsonLd
         data={{
           "@context": "https://schema.org",
@@ -61,109 +92,159 @@ const About = () => {
             "@type": "Person",
             "name": "Shubham Agnihotri",
             "jobTitle": "Senior Data Scientist",
-            "description": "A passionate data scientist focused on AI and building scalable solutions to real-world problems."
-          }
+            "description": "A passionate data scientist focused on AI and building scalable solutions.",
+          },
         }}
       />
-      
-      <div className="relative z-10 px-4 py-20 mx-auto max-w-6xl">
+
+      <div className="relative z-10 px-4 sm:px-6 py-24 mx-auto max-w-6xl">
+        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           className="mb-16 text-center"
         >
-          <h1 className="mb-4 text-4xl font-bold md:text-6xl text-foreground tracking-tight">
-            About Me
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/30 bg-primary/10 text-primary text-sm font-medium mb-6">
+            <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+            The Human Behind the Models
+          </div>
+          <h1 className="font-heading text-4xl md:text-6xl font-bold mb-4">
+            About{' '}
+            <span className="bg-gradient-to-r from-indigo-400 via-violet-400 to-cyan-400 bg-clip-text text-transparent">
+              Me
+            </span>
           </h1>
-          <div className="w-24 h-1.5 mx-auto bg-gradient-to-r from-primary to-secondary rounded-full mb-8"></div>
+          <div className="w-20 h-1 mx-auto bg-gradient-to-r from-indigo-500 to-cyan-500 rounded-full" />
         </motion.div>
 
-        <div className="flex flex-col lg:flex-row gap-12 items-center mb-24">
+        {/* Stats row */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.15 }}
+          className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16"
+        >
+          {stats.map((stat, i) => (
+            <div
+              key={i}
+              className="text-center p-5 rounded-2xl glass-card border border-border/40 hover:border-primary/30 transition-all duration-300"
+            >
+              <div className="text-3xl font-bold font-heading bg-gradient-to-r from-indigo-400 to-cyan-400 bg-clip-text text-transparent mb-1">
+                {stat.value}
+              </div>
+              <div className="text-sm text-muted-foreground">{stat.label}</div>
+            </div>
+          ))}
+        </motion.div>
+
+        {/* Bio section */}
+        <div className="flex flex-col lg:flex-row gap-12 items-center mb-20">
+          {/* Photo */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="w-full lg:w-1/2 flex justify-center"
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="w-full lg:w-2/5 flex justify-center"
           >
-            <div className="relative group">
-              <div className="absolute -inset-1 bg-gradient-to-r from-primary to-secondary rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
-              <div className="relative rounded-2xl overflow-hidden aspect-square max-w-md w-full border border-primary/20 bg-background/50 backdrop-blur-sm p-2 shadow-2xl">
-                <img 
-                  src="https://raw.githubusercontent.com/KillerStrike17/KillerStrike17.github.io/refs/heads/master/assets/Shubham%20Agnihotri.webp" 
-                  alt="Shubham Agnihotri Profile" 
-                  className="rounded-xl w-full h-full object-cover shadow-inner"
-                />
+            <div className="relative group max-w-sm w-full">
+              {/* Glow behind image */}
+              <div className="absolute -inset-4 bg-gradient-to-br from-indigo-500/20 to-cyan-500/20 rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+              {/* Gradient border card */}
+              <div className="relative rounded-2xl p-[2px] bg-gradient-to-br from-indigo-500/60 via-violet-500/40 to-cyan-500/60">
+                <div className="rounded-2xl overflow-hidden bg-background aspect-square">
+                  <img
+                    src="https://raw.githubusercontent.com/KillerStrike17/KillerStrike17.github.io/refs/heads/master/assets/Shubham%20Agnihotri.webp"
+                    alt="Shubham Agnihotri"
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
               </div>
             </div>
           </motion.div>
 
+          {/* Bio text */}
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="w-full lg:w-1/2 space-y-6 text-lg text-muted-foreground leading-relaxed"
+            transition={{ duration: 0.7, delay: 0.35 }}
+            className="w-full lg:w-3/5 space-y-5 text-base md:text-lg text-muted-foreground leading-relaxed"
           >
-            <p className="text-2xl text-foreground font-semibold leading-snug">
-              Hello World! I'm Shubham Agnihotri, a naturally curious problem solver with a passion for transforming data into impact.
-            </p>
-            
-            <p>
-              Solving puzzles, riddles, and mathematical models are just a few of my core interests. My primary motivation is to decipher the world for people by solving day-to-day challenges using advancing technologies. I firmly believe that technological contributions can have a massive and positive impact on society.
+            <p className="text-xl md:text-2xl font-semibold font-heading text-foreground leading-snug">
+              Hello World! I'm a naturally curious problem solver with a passion for transforming data into impact.
             </p>
 
             <p>
-              To me, <strong className="text-foreground">Artificial Intelligence</strong> and <strong className="text-foreground">Data Science</strong> are the perfect tools to shape a better future. By powering modern systems with AI, we can help humans be more humane. I've spent my career applying this philosophy—whether developing cutting-edge OCR and VLM systems at IDFC First Bank, pioneering agri-drone tech at S.AgriUdaan, or building digital twins at Arcadis.
+              Solving puzzles, riddles, and mathematical models are just a few of my core interests. My primary
+              motivation is to decipher the world for people by solving day-to-day challenges using advancing
+              technologies.
             </p>
 
             <p>
-              When I am not swimming in a pool of 1s and 0s, you can find me playing Football or Badminton. Action-adventure games like <span className="italic">Assassin's Creed</span> and <span className="italic">The Witcher</span> are my favorite pastimes; their storylines and graphics never fail to fascinate me.
+              To me,{' '}
+              <span className="font-semibold text-foreground">Artificial Intelligence</span> and{' '}
+              <span className="font-semibold text-foreground">Data Science</span> are the perfect tools to shape
+              a better future. I've spent my career applying this philosophy—whether developing cutting-edge OCR
+              and VLM systems at IDFC First Bank, pioneering agri-drone tech at S.AgriUdaan, or building digital
+              twins at Arcadis.
+            </p>
+
+            <p>
+              When I'm not swimming in a pool of 1s and 0s, you can find me playing Football or Badminton.
+              Action-adventure games like{' '}
+              <span className="italic text-foreground">Assassin's Creed</span> and{' '}
+              <span className="italic text-foreground">The Witcher</span> are my favorite pastimes.
             </p>
           </motion.div>
         </div>
 
-        <motion.section
-          initial={{ opacity: 0, y: 30 }}
+        {/* Interests grid */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.6 }}
         >
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-foreground inline-block relative">
-              What Drives Me
-              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-3 w-1/2 h-1 bg-primary/40 rounded-full"></div>
+          <div className="text-center mb-10">
+            <h2 className="font-heading text-3xl font-bold text-foreground">
+              What{' '}
+              <span className="bg-gradient-to-r from-indigo-400 to-cyan-400 bg-clip-text text-transparent">
+                Drives Me
+              </span>
             </h2>
           </div>
-          
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+
+          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             {interests.map((interest, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                custom={index}
+                variants={itemVariant}
+                initial="hidden"
+                whileInView="visible"
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="group relative p-8 rounded-2xl border bg-card/50 backdrop-blur-md border-border hover:border-primary/50 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] dark:hover:shadow-primary/5"
+                className={`group relative p-6 rounded-2xl glass-card border border-border/40 hover:border-primary/30 transition-all duration-400 hover:-translate-y-1 cursor-default ${interest.glow}`}
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 rounded-2xl transition-opacity duration-300"></div>
-                
-                <div className="relative z-10 flex flex-col h-full gap-4">
-                  <div className="inline-flex w-16 h-16 items-center justify-center rounded-xl bg-primary/10 group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-300 text-primary mb-2 shadow-sm">
-                    {interest.icon}
+                {/* Hover glow overlay */}
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+
+                <div className="relative z-10 flex flex-col gap-4">
+                  {/* Icon */}
+                  <div
+                    className={`inline-flex w-12 h-12 items-center justify-center rounded-xl bg-gradient-to-br ${interest.gradient} bg-opacity-10 shadow-sm group-hover:scale-110 transition-transform duration-300`}
+                  >
+                    <interest.icon size={22} className="text-white" />
                   </div>
-                  
-                  <h3 className="text-xl font-bold text-foreground">
-                    {interest.title}
-                  </h3>
-                  
-                  <p className="text-base text-muted-foreground leading-relaxed mt-auto">
-                    {interest.description}
-                  </p>
+
+                  <div>
+                    <h3 className="font-heading text-lg font-bold text-foreground mb-2">{interest.title}</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{interest.description}</p>
+                  </div>
                 </div>
               </motion.div>
             ))}
           </div>
-        </motion.section>
+        </motion.div>
       </div>
     </div>
   );
