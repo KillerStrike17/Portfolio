@@ -38,7 +38,7 @@ const eventsData: Event[] = [
     title: "Cloud8 Summit 2026",
     event: "Cloud8 Developer Conference",
     date: "January 16, 2026",
-    location: "India",
+    location: "Amsterdam, Netherlands",
     audience: "1000+ developers",
     topic: "The Graph Awakens: Uniting Neo4j and Google's A2A Protocol",
     description: "A deep dive into combining Neo4j graph databases with Google's A2A protocol for interconnected multi-agent systems.",
