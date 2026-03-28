@@ -105,6 +105,41 @@ Contact form with validation (React Hook Form + Zod) for reaching out directly.
 
 ---
 
+## 🚀 Running Locally
+
+To set up and run this project locally, follow these steps:
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/KillerStrike17/Portfolio.git
+   cd Portfolio
+   ```
+
+2. **Install dependencies:**
+   Ensure you have Node.js installed, then run:
+   ```bash
+   npm install
+   ```
+   *(Note: You can also use `yarn` or `pnpm` if you prefer).*
+
+3. **Start the development server:**
+   ```bash
+   npm run dev
+   ```
+
+4. **View in browser:**
+   Open your browser and navigate to the local URL provided by Vite in your terminal (usually `http://localhost:8080` or `http://localhost:5173`).
+
+---
+
+## 🏗️ Managing Content & Recent Updates
+
+- **Projects:** The Portfolio dynamically curates projects based on `src/data/projects.config.ts`. You can control which projects appear on the site by toggling the `show: true` or `show: false` flag for each project. Recent updates replaced external placeholders with custom, local imagery stored in the public directory to ensure stability and relevance.
+- **Speaking Engagements:** Conference talk imagery is served locally from the `Assets/` folder, directly linked in the respective component configurations.
+- **About Me:** The About text has been revamped into a summarized, structured presentation of core philosophies and interests, moving away from a traditional timeline to properly distinguish it from the Experience page.
+
+---
+
 ## 🎨 Design System
 
 - **Theme**: Supports both **light** and **dark** modes via `next-themes`, persisted in `localStorage` under the key `shub_theme_mode`.
@@ -128,8 +163,9 @@ Every page implements:
 
 | File | Purpose |
 |---|---|
-| `vite.config.ts` | Dev server on port `8080`, `@` alias points to `./src` |
+| `vite.config.ts` | Dev server on port `8080`, `@` alias points to `./src`, and maps `Assets` |
 | `tailwind.config.js` | Custom theme tokens, `tailwindcss-animate` plugin |
 | `tsconfig.json` | Strict TypeScript, path alias `@/*` → `src/*` |
 | `components.json` | shadcn/ui style, base color, and component paths |
 | `.gitignore` | Ignores `node_modules`, `dist`, etc. |
+| `vercel.json` | SPA fallback routing rules for Vercel deployment |

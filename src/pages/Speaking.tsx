@@ -206,7 +206,7 @@ const Speaking = () => {
 
   const stats = [
     { number: "20+", label: "Speaking Events" },
-    { number: "10,000+", label: "Audience Reached" },
+    { number: "3,00,000+", label: "Audience Reached" },
     { number: "4+", label: "Countries" },
     { number: "10+", label: "Tech Topics" }
   ];
