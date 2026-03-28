@@ -39,7 +39,7 @@ export const projects: Project[] = [
   {
     title: "A2A-Agent2Agent-Protocol-demo",
     description: "A2A-Agent2Agent-Protocol-demo — a public GitHub project.",
-    image: "/Assets/projects/a2a_demo_1774681602193.png",
+    image: "/projects/a2a_demo_1774681602193.png",
     technologies: ["Python"],
     github: "https://github.com/KillerStrike17/A2A-Agent2Agent-Protocol-demo",
     category: "AI/ML",
@@ -48,7 +48,7 @@ export const projects: Project[] = [
   {
     title: "CP-Journey",
     description: "This is my hardwork and dedication to get into Google, Facebook, Microsoft, Amazon, Apple and others",
-    image: "/Assets/projects/cp_journey_1774681616367.png",
+    image: "/projects/cp_journey_1774681616367.png",
     technologies: ["Python"],
     github: "https://github.com/KillerStrike17/CP-Journey",
     category: "Competitive Programming",
@@ -66,7 +66,7 @@ export const projects: Project[] = [
   {
     title: "A2A-Protocol-with-Neo4j",
     description: "A2A-Protocol-with-Neo4j — a public GitHub project.",
-    image: "/Assets/projects/a2a_neo4j_1774681635320.png",
+    image: "/projects/a2a_neo4j_1774681635320.png",
     technologies: ["Python"],
     github: "https://github.com/KillerStrike17/A2A-Protocol-with-Neo4j",
     category: "AI/ML",
@@ -75,7 +75,7 @@ export const projects: Project[] = [
   {
     title: "Google-Agent-Development-Kit-Deep-Dive",
     description: "Google-Agent-Development-Kit-Deep-Dive — a public GitHub project.",
-    image: "/Assets/projects/google_adk_1774681651705.png",
+    image: "/projects/google_adk_1774681651705.png",
     technologies: ["GitHub"],
     github: "https://github.com/KillerStrike17/Google-Agent-Development-Kit-Deep-Dive",
     category: "AI/ML",
@@ -84,7 +84,7 @@ export const projects: Project[] = [
   {
     title: "A2A-Agent2Agent-Protocol-Gitex-2025",
     description: "A2A-Agent2Agent-Protocol-Gitex-2025 — a public GitHub project.",
-    image: "/Assets/projects/a2a_gitex_1774681670021.png",
+    image: "/projects/a2a_gitex_1774681670021.png",
     technologies: ["Python"],
     github: "https://github.com/KillerStrike17/A2A-Agent2Agent-Protocol-Gitex-2025",
     category: "AI/ML",
@@ -166,7 +166,7 @@ export const projects: Project[] = [
   {
     title: "Stable-Diffusion-with-custom-styles",
     description: "Stable-Diffusion-with-custom-styles — a public GitHub project.",
-    image: "/Assets/projects/stable_diffusion_1774681699283.png",
+    image: "/projects/stable_diffusion_1774681699283.png",
     technologies: ["GitHub"],
     github: "https://github.com/KillerStrike17/Stable-Diffusion-with-custom-styles",
     category: "AI/ML",
@@ -184,7 +184,7 @@ export const projects: Project[] = [
   {
     title: "Law-RAG",
     description: "Law-RAG — a public GitHub project.",
-    image: "/Assets/projects/law_rag_1774681718457.png",
+    image: "/projects/law_rag_1774681718457.png",
     technologies: ["Jupyter Notebook"],
     github: "https://github.com/KillerStrike17/Law-RAG",
     category: "AI/ML",
@@ -229,7 +229,7 @@ export const projects: Project[] = [
   {
     title: "Transformers-from-scratch",
     description: "Transformers-from-scratch — a public GitHub project.",
-    image: "/Assets/projects/transformers_1774696999894.png",
+    image: "/projects/transformers_1774696999894.png",
     technologies: ["Jupyter Notebook"],
     github: "https://github.com/KillerStrike17/Transformers-from-scratch",
     category: "AI/ML",
@@ -364,7 +364,7 @@ export const projects: Project[] = [
   {
     title: "DavidNet-Cifar10-Dawn-Benchmark",
     description: "DavidNet-Cifar10-Dawn-Benchmark — a public GitHub project.",
-    image: "/Assets/projects/dawn_benchmark_1774697017688.png",
+    image: "/projects/dawn_benchmark_1774697017688.png",
     technologies: ["Jupyter Notebook"],
     github: "https://github.com/KillerStrike17/DavidNet-Cifar10-Dawn-Benchmark",
     category: "AI/ML",
@@ -418,7 +418,7 @@ export const projects: Project[] = [
   {
     title: "MNIST-99.4-under-8k-parameters",
     description: "MNIST-99.4-under-8k-parameters — a public GitHub project.",
-    image: "/Assets/projects/mnist_8k_1774697035347.png",
+    image: "/projects/mnist_8k_1774697035347.png",
     technologies: ["Jupyter Notebook"],
     github: "https://github.com/KillerStrike17/MNIST-99.4-under-8k-parameters",
     category: "AI/ML",
@@ -598,7 +598,7 @@ export const projects: Project[] = [
   {
     title: "Competitive_Programming",
     description: "This repository contains the solutions of the problems I solved in CP",
-    image: "/Assets/projects/competitive_programming_1774697053239.png",
+    image: "/projects/competitive_programming_1774697053239.png",
     technologies: ["Python"],
     github: "https://github.com/KillerStrike17/Competitive_Programming",
     category: "Competitive Programming",
