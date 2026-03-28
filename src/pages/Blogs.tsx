@@ -5,6 +5,9 @@ import { Button } from "@/components/ui/button";
 import SEO from "../components/SEO";
 import JsonLd from "../components/JsonLd";
 import { MediumArticles } from "medium-article-api";
+import {
+  fadeUp, fadeInLeft, fadeInRight, staggerContainer, staggerItem,
+} from "../lib/animations";
 
 interface MediumArticle {
   title: string;
@@ -184,17 +187,25 @@ const Blogs = () => {
       {/* Background */}
       <div className="fixed inset-0 -z-10 pointer-events-none">
         <div className="absolute inset-0 mesh-bg opacity-40 dark:opacity-100" />
-        <div className="absolute top-0 left-1/4 w-[400px] h-[400px] bg-indigo-500/8 rounded-full blur-[100px]" />
-        <div className="absolute bottom-1/4 right-0 w-[350px] h-[350px] bg-cyan-500/8 rounded-full blur-[80px]" />
+        <motion.div
+          className="absolute top-0 left-1/4 w-[400px] h-[400px] bg-indigo-500/8 rounded-full blur-[100px]"
+          animate={{ scale: [1, 1.1, 1] }}
+          transition={{ duration: 9, repeat: Infinity, ease: 'easeInOut' }}
+        />
+        <motion.div
+          className="absolute bottom-1/4 right-0 w-[350px] h-[350px] bg-cyan-500/8 rounded-full blur-[80px]"
+          animate={{ scale: [1, 1.12, 1] }}
+          transition={{ duration: 11, repeat: Infinity, ease: 'easeInOut', delay: 4 }}
+        />
       </div>
 
       <div className="px-4 sm:px-6 py-24 min-h-screen">
         <div className="mx-auto max-w-7xl">
           {/* Header */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            variants={fadeUp}
+            initial="hidden"
+            animate="visible"
             className="mb-12 text-center"
           >
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/30 bg-primary/10 text-primary text-sm font-medium mb-6">
@@ -207,6 +218,12 @@ const Blogs = () => {
                 Blog
               </span>
             </h1>
+            <motion.div
+              initial={{ scaleX: 0 }}
+              animate={{ scaleX: 1 }}
+              transition={{ duration: 0.7, delay: 0.3 }}
+              className="w-20 h-1 mx-auto bg-gradient-to-r from-indigo-500 to-cyan-500 rounded-full origin-left mb-4"
+            />
             <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
               Thoughts, insights, and technical deep-dives on data science, AI, and technology
             </p>
@@ -214,9 +231,10 @@ const Blogs = () => {
 
           {/* Medium profile banner */}
           <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.15 }}
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-40px' }}
             className="rounded-2xl glass-card border border-border/40 p-6 mb-12"
           >
             <div className="flex flex-col sm:flex-row gap-5 items-center">
@@ -311,9 +329,10 @@ const Blogs = () => {
           {/* Featured post */}
           {!loading && !error && blogPosts.length > 0 && (
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
+              variants={fadeInLeft}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: '-60px' }}
               className="mb-10"
             >
               <a
@@ -325,10 +344,12 @@ const Blogs = () => {
                 <div className="overflow-hidden rounded-2xl glass-card border border-border/40 hover:border-primary/30 hover:shadow-card-hover transition-all duration-400">
                   <div className="md:flex">
                     <div className="md:w-5/12 overflow-hidden">
-                      <img
+                      <motion.img
                         src={blogPosts[0].image}
                         alt={blogPosts[0].title}
-                        className="w-full h-56 md:h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        className="w-full h-56 md:h-full object-cover"
+                        whileHover={{ scale: 1.05 }}
+                        transition={{ duration: 0.5 }}
                         onError={(e) => {
                           (e.target as HTMLImageElement).src =
                             "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=500&h=300&fit=crop";
@@ -369,16 +390,17 @@ const Blogs = () => {
             </motion.div>
           )}
 
-          {/* Blog grid */}
+          {/* Blog grid — scroll-triggered stagger */}
           {!loading && !error && blogPosts.length > 1 && (
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <motion.div
+              variants={staggerContainer}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: '-60px' }}
+              className="grid gap-6 md:grid-cols-2 lg:grid-cols-3"
+            >
               {blogPosts.slice(1).map((post, index) => (
-                <motion.article
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.1 * index }}
-                >
+                <motion.article key={index} variants={staggerItem}>
                   <a
                     href={post.url}
                     target="_blank"
@@ -387,10 +409,12 @@ const Blogs = () => {
                   >
                     <div className="h-full overflow-hidden rounded-2xl glass-card border border-border/40 hover:border-primary/30 hover:shadow-card-hover transition-all duration-400 hover:-translate-y-1">
                       <div className="overflow-hidden">
-                        <img
+                        <motion.img
                           src={post.image}
                           alt={post.title}
-                          className="w-full h-44 object-cover transition-transform duration-500 group-hover:scale-108"
+                          className="w-full h-44 object-cover"
+                          whileHover={{ scale: 1.08 }}
+                          transition={{ duration: 0.5 }}
                           onError={(e) => {
                             (e.target as HTMLImageElement).src =
                               "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=500&h=300&fit=crop";
@@ -399,7 +423,6 @@ const Blogs = () => {
                       </div>
 
                       <div className="p-5">
-                        {/* Tags */}
                         <div className="flex flex-wrap gap-1.5 mb-3">
                           {post.tags.slice(0, 2).map((tag, tagIndex) => (
                             <span
@@ -439,7 +462,7 @@ const Blogs = () => {
                   </a>
                 </motion.article>
               ))}
-            </div>
+            </motion.div>
           )}
         </div>
       </div>

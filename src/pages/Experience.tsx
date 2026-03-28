@@ -2,6 +2,9 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { MapPin, Calendar, TrendingUp, ChevronRight } from 'lucide-react';
 import SEO from '../components/SEO';
+import {
+  fadeUp, fadeInLeft, staggerContainer, staggerItem, staggerItemLeft, EASE,
+} from '../lib/animations';
 
 const Experience = () => {
   const [activeTab, setActiveTab] = useState(0);
@@ -79,17 +82,25 @@ const Experience = () => {
       {/* Background */}
       <div className="fixed inset-0 -z-10 pointer-events-none">
         <div className="absolute inset-0 mesh-bg opacity-40 dark:opacity-100" />
-        <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-indigo-500/8 rounded-full blur-[100px]" />
-        <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-cyan-500/8 rounded-full blur-[80px]" />
+        <motion.div
+          className="absolute top-0 right-0 w-[400px] h-[400px] bg-indigo-500/8 rounded-full blur-[100px]"
+          animate={{ scale: [1, 1.1, 1] }}
+          transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
+        />
+        <motion.div
+          className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-cyan-500/8 rounded-full blur-[80px]"
+          animate={{ scale: [1, 1.15, 1] }}
+          transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut', delay: 3 }}
+        />
       </div>
 
       <div className="px-4 sm:px-6 py-24 min-h-screen">
         <div className="mx-auto max-w-6xl">
           {/* Header */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            variants={fadeUp}
+            initial="hidden"
+            animate="visible"
             className="mb-14 text-center"
           >
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/30 bg-primary/10 text-primary text-sm font-medium mb-6">
@@ -102,7 +113,13 @@ const Experience = () => {
                 Experience
               </span>
             </h1>
-            <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
+            <motion.div
+              initial={{ scaleX: 0 }}
+              animate={{ scaleX: 1 }}
+              transition={{ duration: 0.7, delay: 0.3 }}
+              className="w-20 h-1 mx-auto bg-gradient-to-r from-indigo-500 to-cyan-500 rounded-full origin-left"
+            />
+            <p className="mx-auto max-w-2xl text-lg text-muted-foreground mt-4">
               A journey through data science and machine learning across diverse industries
             </p>
           </motion.div>
@@ -110,22 +127,40 @@ const Experience = () => {
           <div className="flex flex-col lg:flex-row gap-6">
             {/* ── Left: Timeline company list ── */}
             <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
+              variants={fadeInLeft}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: '-40px' }}
               className="lg:w-72 flex-shrink-0"
             >
               <div className="relative space-y-0 pl-4">
-                {/* Vertical line */}
-                <div className="absolute left-0 top-5 bottom-5 w-px bg-gradient-to-b from-indigo-500/60 via-violet-500/40 to-cyan-500/60" />
+                {/* Animated vertical line */}
+                <motion.div
+                  initial={{ scaleY: 0 }}
+                  whileInView={{ scaleY: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, delay: 0.2, ease: EASE }}
+                  className="absolute left-0 top-5 bottom-5 w-px bg-gradient-to-b from-indigo-500/60 via-violet-500/40 to-cyan-500/60 origin-top"
+                />
 
                 {experiences.map((exp, index) => (
-                  <div key={index} className="relative">
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, x: -16 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.3 + index * 0.1, ease: EASE }}
+                    className="relative"
+                  >
                     {/* Timeline dot */}
-                    <div
-                      className={`absolute -left-[13px] top-6 w-3.5 h-3.5 rounded-full border-2 transition-all duration-300 z-10 ${
+                    <motion.div
+                      animate={{
+                        scale: activeTab === index ? 1.2 : 1,
+                        boxShadow: activeTab === index ? '0 0 12px rgba(99,102,241,0.6)' : 'none',
+                      }}
+                      className={`absolute -left-[13px] top-6 w-3.5 h-3.5 rounded-full border-2 transition-colors duration-300 z-10 ${
                         activeTab === index
-                          ? `bg-gradient-to-br ${exp.gradient} border-transparent shadow-glow-sm`
+                          ? `bg-gradient-to-br ${exp.gradient} border-transparent`
                           : 'border-border bg-background hover:border-primary/50'
                       }`}
                     />
@@ -147,11 +182,16 @@ const Experience = () => {
                           <p className="text-xs text-muted-foreground/70 mt-1">{exp.period}</p>
                         </div>
                         {activeTab === index && (
-                          <ChevronRight size={14} className="text-primary flex-shrink-0" />
+                          <motion.div
+                            initial={{ opacity: 0, x: -4 }}
+                            animate={{ opacity: 1, x: 0 }}
+                          >
+                            <ChevronRight size={14} className="text-primary flex-shrink-0" />
+                          </motion.div>
                         )}
                       </div>
                     </button>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
             </motion.div>
@@ -161,9 +201,9 @@ const Experience = () => {
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeTab}
-                  initial={{ opacity: 0, y: 12 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -12 }}
+                  initial={{ opacity: 0, y: 16, scale: 0.98 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  exit={{ opacity: 0, y: -12, scale: 0.98 }}
                   transition={{ duration: 0.35, ease: 'easeOut' }}
                   className="rounded-2xl glass-card border border-border/50 p-6 md:p-8 shadow-card"
                 >
@@ -210,13 +250,16 @@ const Experience = () => {
                       <TrendingUp size={16} className="text-primary" />
                       Key Achievements
                     </h4>
-                    <ul className="space-y-3">
+                    <motion.ul
+                      variants={staggerContainer}
+                      initial="hidden"
+                      animate="visible"
+                      className="space-y-3"
+                    >
                       {active.achievements.map((achievement, index) => (
                         <motion.li
                           key={index}
-                          initial={{ opacity: 0, x: 12 }}
-                          animate={{ opacity: 1, x: 0 }}
-                          transition={{ duration: 0.3, delay: index * 0.06 }}
+                          variants={staggerItemLeft}
                           className="flex gap-3 items-start text-sm text-muted-foreground leading-relaxed"
                         >
                           <span
@@ -225,7 +268,7 @@ const Experience = () => {
                           {achievement}
                         </motion.li>
                       ))}
-                    </ul>
+                    </motion.ul>
                   </div>
 
                   {/* Technologies */}
@@ -233,16 +276,22 @@ const Experience = () => {
                     <h4 className="font-heading text-base font-semibold text-foreground mb-3">
                       Technologies & Tools
                     </h4>
-                    <div className="flex flex-wrap gap-2">
+                    <motion.div
+                      variants={staggerContainer}
+                      initial="hidden"
+                      animate="visible"
+                      className="flex flex-wrap gap-2"
+                    >
                       {active.technologies.map((tech, index) => (
-                        <span
+                        <motion.span
                           key={index}
+                          variants={staggerItem}
                           className="px-2.5 py-1 text-xs font-medium rounded-full bg-primary/8 text-primary border border-primary/20 hover:bg-primary/15 transition-colors duration-200"
                         >
                           {tech.trim()}
-                        </span>
+                        </motion.span>
                       ))}
-                    </div>
+                    </motion.div>
                   </div>
                 </motion.div>
               </AnimatePresence>

@@ -2,12 +2,17 @@ import { motion } from 'framer-motion';
 import { BookOpen, Brain, Code, Gamepad2, Database, Rocket } from 'lucide-react';
 import SEO from '../components/SEO';
 import JsonLd from '../components/JsonLd';
+import AnimatedCounter from '../components/AnimatedCounter';
+import {
+  fadeUp, fadeInLeft, fadeInRight,
+  staggerContainer, staggerItem,
+} from '../lib/animations';
 
 const stats = [
-  { value: '5+', label: 'Years Experience' },
-  { value: '₹50Cr+', label: 'Value Generated' },
-  { value: '500+', label: 'People Trained' },
-  { value: '3', label: 'Companies Led' },
+  { end: 7,   prefix: '',  suffix: '+',  label: 'Years Experience' },
+  { end: 100, prefix: '₹', suffix: 'Cr+', label: 'Value Generated' },
+  { end: 500, prefix: '',  suffix: '+',  label: 'People Trained' },
+  { end: 3,   prefix: '',  suffix: '',   label: 'Companies Led' },
 ];
 
 const About = () => {
@@ -56,24 +61,20 @@ const About = () => {
     },
   ];
 
-  const itemVariant = {
-    hidden: { opacity: 0, y: 24 },
-    visible: (i: number) => ({
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.5, delay: i * 0.08, ease: [0.25, 0.46, 0.45, 0.94] },
-    }),
-  };
-
   return (
     <div className="relative min-h-screen overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute inset-0 mesh-bg opacity-50 dark:opacity-100" />
-        <div className="absolute top-0 left-1/3 w-[500px] h-[500px] bg-indigo-500/10 rounded-full blur-[120px] animate-pulse-slow" />
-        <div
-          className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-cyan-500/10 rounded-full blur-[100px] animate-pulse-slow"
-          style={{ animationDelay: '3s' }}
+        <motion.div
+          className="absolute top-0 left-1/3 w-[500px] h-[500px] bg-indigo-500/10 rounded-full blur-[120px]"
+          animate={{ scale: [1, 1.1, 1], opacity: [0.6, 1, 0.6] }}
+          transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
+        />
+        <motion.div
+          className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-cyan-500/10 rounded-full blur-[100px]"
+          animate={{ scale: [1, 1.15, 1], opacity: [0.5, 0.9, 0.5] }}
+          transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut', delay: 3 }}
         />
       </div>
 
@@ -98,11 +99,12 @@ const About = () => {
       />
 
       <div className="relative z-10 px-4 sm:px-6 py-24 mx-auto max-w-6xl">
+
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          variants={fadeUp}
+          initial="hidden"
+          animate="visible"
           className="mb-16 text-center"
         >
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/30 bg-primary/10 text-primary text-sm font-medium mb-6">
@@ -115,26 +117,38 @@ const About = () => {
               Me
             </span>
           </h1>
-          <div className="w-20 h-1 mx-auto bg-gradient-to-r from-indigo-500 to-cyan-500 rounded-full" />
+          <motion.div
+            initial={{ scaleX: 0 }}
+            animate={{ scaleX: 1 }}
+            transition={{ duration: 0.7, delay: 0.3 }}
+            className="w-20 h-1 mx-auto bg-gradient-to-r from-indigo-500 to-cyan-500 rounded-full origin-left"
+          />
         </motion.div>
 
-        {/* Stats row */}
+        {/* Stats row — animated counters */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.15 }}
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-60px' }}
           className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16"
         >
           {stats.map((stat, i) => (
-            <div
+            <motion.div
               key={i}
+              variants={staggerItem}
               className="text-center p-5 rounded-2xl glass-card border border-border/40 hover:border-primary/30 transition-all duration-300"
             >
               <div className="text-3xl font-bold font-heading bg-gradient-to-r from-indigo-400 to-cyan-400 bg-clip-text text-transparent mb-1">
-                {stat.value}
+                <AnimatedCounter
+                  end={stat.end}
+                  prefix={stat.prefix}
+                  suffix={stat.suffix}
+                  duration={2.2}
+                />
               </div>
               <div className="text-sm text-muted-foreground">{stat.label}</div>
-            </div>
+            </motion.div>
           ))}
         </motion.div>
 
@@ -142,15 +156,14 @@ const About = () => {
         <div className="flex flex-col lg:flex-row gap-12 items-center mb-20">
           {/* Photo */}
           <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
+            variants={fadeInLeft}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-80px' }}
             className="w-full lg:w-2/5 flex justify-center"
           >
             <div className="relative group max-w-sm w-full">
-              {/* Glow behind image */}
               <div className="absolute -inset-4 bg-gradient-to-br from-indigo-500/20 to-cyan-500/20 rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-              {/* Gradient border card */}
               <div className="relative rounded-2xl p-[2px] bg-gradient-to-br from-indigo-500/60 via-violet-500/40 to-cyan-500/60">
                 <div className="rounded-2xl overflow-hidden bg-background aspect-square">
                   <img
@@ -165,16 +178,18 @@ const About = () => {
 
           {/* Bio text */}
           <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7, delay: 0.35 }}
+            variants={fadeInRight}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-80px' }}
             className="w-full lg:w-3/5 space-y-5 text-base md:text-lg text-muted-foreground leading-relaxed"
           >
             <p className="text-xl md:text-2xl font-semibold font-heading text-foreground leading-snug">
-              Hello World! I'm a naturally curious problem solver with a passion for transforming data into impact.
+              Hello World! I am Shubham Agnihotri.
             </p>
 
             <p>
+              A naturally curious problem solver with a passion for transforming data into impact.
               Solving puzzles, riddles, and mathematical models are just a few of my core interests. My primary
               motivation is to decipher the world for people by solving day-to-day challenges using advancing
               technologies.
@@ -199,42 +214,45 @@ const About = () => {
         </div>
 
         {/* Interests grid */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-80px' }}
-          transition={{ duration: 0.6 }}
-        >
-          <div className="text-center mb-10">
+        <div>
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-60px' }}
+            className="text-center mb-10"
+          >
             <h2 className="font-heading text-3xl font-bold text-foreground">
               What{' '}
               <span className="bg-gradient-to-r from-indigo-400 to-cyan-400 bg-clip-text text-transparent">
                 Drives Me
               </span>
             </h2>
-          </div>
+          </motion.div>
 
-          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          <motion.div
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-60px' }}
+            className="grid gap-5 md:grid-cols-2 lg:grid-cols-3"
+          >
             {interests.map((interest, index) => (
               <motion.div
                 key={index}
-                custom={index}
-                variants={itemVariant}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                className={`group relative p-6 rounded-2xl glass-card border border-border/40 hover:border-primary/30 transition-all duration-400 hover:-translate-y-1 cursor-default ${interest.glow}`}
+                variants={staggerItem}
+                className={`group relative p-6 rounded-2xl glass-card border border-border/40 hover:border-primary/30 transition-all duration-300 hover:-translate-y-1 cursor-default ${interest.glow}`}
               >
-                {/* Hover glow overlay */}
                 <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
 
                 <div className="relative z-10 flex flex-col gap-4">
-                  {/* Icon */}
-                  <div
-                    className={`inline-flex w-12 h-12 items-center justify-center rounded-xl bg-gradient-to-br ${interest.gradient} bg-opacity-10 shadow-sm group-hover:scale-110 transition-transform duration-300`}
+                  <motion.div
+                    className={`inline-flex w-12 h-12 items-center justify-center rounded-xl bg-gradient-to-br ${interest.gradient} shadow-sm`}
+                    whileHover={{ scale: 1.12, rotate: 5 }}
+                    transition={{ type: 'spring', stiffness: 300, damping: 15 }}
                   >
                     <interest.icon size={22} className="text-white" />
-                  </div>
+                  </motion.div>
 
                   <div>
                     <h3 className="font-heading text-lg font-bold text-foreground mb-2">{interest.title}</h3>
@@ -243,8 +261,8 @@ const About = () => {
                 </div>
               </motion.div>
             ))}
-          </div>
-        </motion.div>
+          </motion.div>
+        </div>
       </div>
     </div>
   );

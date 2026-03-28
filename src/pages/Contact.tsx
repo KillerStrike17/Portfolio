@@ -4,6 +4,9 @@ import { Mail, MapPin, Send, Linkedin, Github, Youtube, MessageSquare, Zap } fro
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/hooks/use-toast';
 import SEO from '../components/SEO';
+import {
+  fadeUp, fadeInLeft, fadeInRight, staggerContainer, staggerItem, EASE_SPRING,
+} from '../lib/animations';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -99,17 +102,25 @@ const Contact = () => {
       {/* Background */}
       <div className="fixed inset-0 -z-10 pointer-events-none">
         <div className="absolute inset-0 mesh-bg opacity-40 dark:opacity-100" />
-        <div className="absolute top-1/3 left-0 w-[400px] h-[400px] bg-indigo-500/8 rounded-full blur-[100px]" />
-        <div className="absolute bottom-0 right-1/3 w-[350px] h-[350px] bg-violet-500/8 rounded-full blur-[80px]" />
+        <motion.div
+          className="absolute top-1/3 left-0 w-[400px] h-[400px] bg-indigo-500/8 rounded-full blur-[100px]"
+          animate={{ scale: [1, 1.1, 1] }}
+          transition={{ duration: 9, repeat: Infinity, ease: 'easeInOut' }}
+        />
+        <motion.div
+          className="absolute bottom-0 right-1/3 w-[350px] h-[350px] bg-violet-500/8 rounded-full blur-[80px]"
+          animate={{ scale: [1, 1.12, 1] }}
+          transition={{ duration: 11, repeat: Infinity, ease: 'easeInOut', delay: 4 }}
+        />
       </div>
 
       <div className="px-4 sm:px-6 py-24 min-h-screen">
         <div className="mx-auto max-w-6xl">
           {/* Header */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            variants={fadeUp}
+            initial="hidden"
+            animate="visible"
             className="mb-14 text-center"
           >
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/30 bg-primary/10 text-primary text-sm font-medium mb-6">
@@ -122,17 +133,24 @@ const Contact = () => {
                 Touch
               </span>
             </h1>
+            <motion.div
+              initial={{ scaleX: 0 }}
+              animate={{ scaleX: 1 }}
+              transition={{ duration: 0.7, delay: 0.3 }}
+              className="w-20 h-1 mx-auto bg-gradient-to-r from-indigo-500 to-cyan-500 rounded-full origin-left mb-4"
+            />
             <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
               Let's connect! Whether you want to discuss opportunities, collaborations, or just say hello.
             </p>
           </motion.div>
 
           <div className="grid gap-8 lg:grid-cols-5">
-            {/* ── Contact form ── */}
+            {/* ── Contact form — slides from left ── */}
             <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
+              variants={fadeInLeft}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: '-60px' }}
               className="lg:col-span-3"
             >
               <div className="rounded-2xl glass-card border border-border/40 p-7 shadow-card">
@@ -207,44 +225,53 @@ const Contact = () => {
                     />
                   </div>
 
-                  <Button
-                    type="submit"
-                    size="lg"
-                    disabled={isLoading}
-                    className="w-full gap-2 bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 text-white border-0 shadow-glow hover:shadow-glow-lg transition-all duration-300 cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
-                  >
-                    {isLoading ? (
-                      <>
-                        <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                        Sending...
-                      </>
-                    ) : (
-                      <>
-                        <Send size={16} />
-                        Send Message
-                      </>
-                    )}
-                  </Button>
+                  <motion.div whileHover={{ scale: 1.01 }} whileTap={{ scale: 0.99 }}>
+                    <Button
+                      type="submit"
+                      size="lg"
+                      disabled={isLoading}
+                      className="w-full gap-2 bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 text-white border-0 shadow-glow hover:shadow-glow-lg transition-all duration-300 cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
+                    >
+                      {isLoading ? (
+                        <>
+                          <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                          Sending...
+                        </>
+                      ) : (
+                        <>
+                          <Send size={16} />
+                          Send Message
+                        </>
+                      )}
+                    </Button>
+                  </motion.div>
                 </form>
               </div>
             </motion.div>
 
-            {/* ── Right panel ── */}
+            {/* ── Right panel — slides from right ── */}
             <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.35 }}
+              variants={fadeInRight}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: '-60px' }}
               className="lg:col-span-2 space-y-5"
             >
               {/* Contact info */}
-              <div className="rounded-2xl glass-card border border-border/40 p-6 shadow-card">
+              <motion.div
+                variants={staggerContainer}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                className="rounded-2xl glass-card border border-border/40 p-6 shadow-card"
+              >
                 <h2 className="font-heading text-lg font-bold text-foreground mb-5 flex items-center gap-2">
                   <Mail size={16} className="text-primary" />
                   Contact Info
                 </h2>
                 <div className="space-y-5">
                   {contactInfo.map((item, index) => (
-                    <div key={index} className="flex gap-4 items-start">
+                    <motion.div key={index} variants={staggerItem} className="flex gap-4 items-start">
                       <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
                         <item.icon size={16} className="text-primary" />
                       </div>
@@ -263,13 +290,19 @@ const Contact = () => {
                           <p className="text-sm text-foreground">{item.value}</p>
                         )}
                       </div>
-                    </div>
+                    </motion.div>
                   ))}
                 </div>
-              </div>
+              </motion.div>
 
               {/* Social links */}
-              <div className="rounded-2xl glass-card border border-border/40 p-6 shadow-card">
+              <motion.div
+                variants={staggerContainer}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                className="rounded-2xl glass-card border border-border/40 p-6 shadow-card"
+              >
                 <h2 className="font-heading text-lg font-bold text-foreground mb-5">
                   Find Me Online
                 </h2>
@@ -277,11 +310,13 @@ const Contact = () => {
                   {socialLinks.map((social, index) => (
                     <motion.a
                       key={index}
+                      variants={staggerItem}
                       href={social.href}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center gap-3 p-3 rounded-xl hover:bg-muted transition-all duration-200 group cursor-pointer"
-                      whileHover={{ x: 2 }}
+                      whileHover={{ x: 4 }}
+                      transition={{ type: 'spring', stiffness: 300, damping: 20 }}
                     >
                       <div
                         className={`w-9 h-9 rounded-lg bg-gradient-to-br ${social.gradient} flex items-center justify-center flex-shrink-0 shadow-sm`}
@@ -295,10 +330,16 @@ const Contact = () => {
                     </motion.a>
                   ))}
                 </div>
-              </div>
+              </motion.div>
 
               {/* Availability card */}
-              <div className="rounded-2xl border border-primary/20 p-5 bg-gradient-to-br from-primary/8 via-violet-500/5 to-accent/8">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, ease: EASE_SPRING }}
+                className="rounded-2xl border border-primary/20 p-5 bg-gradient-to-br from-primary/8 via-violet-500/5 to-accent/8"
+              >
                 <div className="flex items-center gap-2 mb-3">
                   <Zap size={16} className="text-primary" />
                   <h3 className="font-heading font-semibold text-foreground">Let's Collaborate!</h3>
@@ -310,7 +351,7 @@ const Contact = () => {
                   <span className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse" />
                   Available for new projects
                 </div>
-              </div>
+              </motion.div>
             </motion.div>
           </div>
         </div>

@@ -7,7 +7,9 @@
       "Bash(py \"C:\\\\Users\\\\balen\\\\.claude\\\\skills\\\\ui-ux-pro-max\\\\scripts\\\\search.py\" \"animation accessibility portfolio\" --domain ux)",
       "Bash(npm run:*)",
       "Bash(powershell -Command \"\\(Get-Content ''src\\\\pages\\\\About.tsx'' -Raw\\) -replace \"\"description: ''Passionate about decoding the world''s puzzles, riddles, and mathematical problems.'',\"\", \"\"description: \\\\\"\"Passionate about decoding the world''s puzzles, riddles, and mathematical problems.\\\\\"\",\"\" | Set-Content ''src\\\\pages\\\\About.tsx''\")",
-      "Bash(py \"C:\\\\Users\\\\balen\\\\.claude\\\\skills\\\\ui-ux-pro-max\\\\scripts\\\\search.py\" \"advanced hero bento grid portfolio creative interactive\" --design-system -f markdown)"
+      "Bash(py \"C:\\\\Users\\\\balen\\\\.claude\\\\skills\\\\ui-ux-pro-max\\\\scripts\\\\search.py\" \"advanced hero bento grid portfolio creative interactive\" --design-system -f markdown)",
+      "Bash(python -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\(json.dumps\\(d.get\\(''''scripts'''', {}\\), indent=2\\)\\)\")",
+      "Bash(python -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\(''''Node engines:'''', d.get\\(''''engines'''',{}\\)\\); print\\(''''Node version in package:'''', d.get\\(''''volta'''',{}\\)\\)\")"
     ]
   }
 }

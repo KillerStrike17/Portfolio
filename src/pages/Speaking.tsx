@@ -3,6 +3,10 @@ import { Calendar, MapPin, Users, Video, ChevronRight, FileText, Mic } from 'luc
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import SEO from '../components/SEO';
+import AnimatedCounter from '../components/AnimatedCounter';
+import {
+  fadeUp, staggerContainer, staggerItem, EASE_SPRING,
+} from '../lib/animations';
 
 const Speaking = () => {
   const events = [
@@ -191,10 +195,10 @@ const Speaking = () => {
   ];
 
   const stats = [
-    { number: "20+", label: "Speaking Events" },
-    { number: "3L+", label: "Audience Reached" },
-    { number: "4+", label: "Countries" },
-    { number: "10+", label: "Tech Topics" },
+    { end: 20, suffix: '+', prefix: '', label: 'Speaking Events' },
+    { end: 300000, suffix: '+', prefix: '', label: 'Audience Reached' },
+    { end: 4,  suffix: '+', prefix: '', label: 'Countries' },
+    { end: 10, suffix: '+', prefix: '', label: 'Tech Topics' },
   ];
 
   const typeColors: Record<string, string> = {
@@ -214,17 +218,25 @@ const Speaking = () => {
       {/* Background */}
       <div className="fixed inset-0 -z-10 pointer-events-none">
         <div className="absolute inset-0 mesh-bg opacity-40 dark:opacity-100" />
-        <div className="absolute top-0 right-1/4 w-[400px] h-[400px] bg-violet-500/8 rounded-full blur-[100px]" />
-        <div className="absolute bottom-1/4 left-0 w-[350px] h-[350px] bg-indigo-500/8 rounded-full blur-[80px]" />
+        <motion.div
+          className="absolute top-0 right-1/4 w-[400px] h-[400px] bg-violet-500/8 rounded-full blur-[100px]"
+          animate={{ scale: [1, 1.1, 1] }}
+          transition={{ duration: 9, repeat: Infinity, ease: 'easeInOut' }}
+        />
+        <motion.div
+          className="absolute bottom-1/4 left-0 w-[350px] h-[350px] bg-indigo-500/8 rounded-full blur-[80px]"
+          animate={{ scale: [1, 1.12, 1] }}
+          transition={{ duration: 11, repeat: Infinity, ease: 'easeInOut', delay: 4 }}
+        />
       </div>
 
       <div className="px-4 sm:px-6 py-24 min-h-screen">
         <div className="mx-auto max-w-7xl">
           {/* Header */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            variants={fadeUp}
+            initial="hidden"
+            animate="visible"
             className="mb-14 text-center"
           >
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/30 bg-primary/10 text-primary text-sm font-medium mb-6">
@@ -237,47 +249,66 @@ const Speaking = () => {
                 Talks
               </span>
             </h1>
+            <motion.div
+              initial={{ scaleX: 0 }}
+              animate={{ scaleX: 1 }}
+              transition={{ duration: 0.7, delay: 0.3 }}
+              className="w-20 h-1 mx-auto bg-gradient-to-r from-indigo-500 to-cyan-500 rounded-full origin-left mb-4"
+            />
             <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
               Sharing knowledge and insights at conferences, meetups, and workshops worldwide
             </p>
           </motion.div>
 
-          {/* Stats */}
+          {/* Stats — animated counters */}
           <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.15 }}
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-60px' }}
             className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-14"
           >
             {stats.map((stat, index) => (
-              <div
+              <motion.div
                 key={index}
+                variants={staggerItem}
                 className="text-center p-5 rounded-2xl glass-card border border-border/40 hover:border-primary/30 transition-all duration-300"
               >
                 <div className="text-3xl md:text-4xl font-bold font-heading bg-gradient-to-r from-indigo-400 to-cyan-400 bg-clip-text text-transparent mb-1">
-                  {stat.number}
+                  <AnimatedCounter
+                    end={stat.end}
+                    prefix={stat.prefix}
+                    suffix={stat.suffix}
+                    duration={2}
+                  />
                 </div>
                 <div className="text-sm text-muted-foreground">{stat.label}</div>
-              </div>
+              </motion.div>
             ))}
           </motion.div>
 
-          {/* Events grid */}
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {events.map((event, index) => (
+          {/* Events grid — whileInView stagger */}
+          <motion.div
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-80px' }}
+            className="grid gap-6 md:grid-cols-2 lg:grid-cols-3"
+          >
+            {events.map((event) => (
               <motion.div
                 key={event.id}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.06 }}
+                variants={staggerItem}
                 className="group overflow-hidden rounded-2xl glass-card border border-border/40 hover:border-primary/30 hover:shadow-card-hover transition-all duration-400 hover:-translate-y-1"
               >
                 {/* Image */}
                 <div className="relative overflow-hidden h-44">
-                  <img
+                  <motion.img
                     src={event.image}
                     alt={event.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-108"
+                    className="w-full h-full object-cover"
+                    whileHover={{ scale: 1.08 }}
+                    transition={{ duration: 0.5, ease: EASE_SPRING }}
                     onError={(e) => {
                       (e.target as HTMLImageElement).src =
                         "https://images.unsplash.com/photo-1500673922987-e212871fec22?w=500&h=300&fit=crop";
@@ -377,19 +408,25 @@ const Speaking = () => {
                 </div>
               </motion.div>
             ))}
-          </div>
+          </motion.div>
 
           {/* CTA */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 32 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            viewport={{ once: true, margin: '-60px' }}
+            transition={{ duration: 0.65, ease: EASE_SPRING }}
             className="mt-16 text-center rounded-2xl glass-card border border-primary/20 p-10 bg-gradient-to-br from-primary/5 to-violet-500/5"
           >
-            <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-indigo-500 to-violet-500 flex items-center justify-center mx-auto mb-4">
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0 }}
+              whileInView={{ scale: 1, opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, ease: EASE_SPRING }}
+              className="w-12 h-12 rounded-xl bg-gradient-to-br from-indigo-500 to-violet-500 flex items-center justify-center mx-auto mb-4"
+            >
               <Mic size={22} className="text-white" />
-            </div>
+            </motion.div>
             <h2 className="font-heading text-2xl font-bold text-foreground mb-3">
               Invite Me to Speak
             </h2>
