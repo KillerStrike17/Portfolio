@@ -658,5 +658,14 @@ export const projects: Project[] = [
     category: "Computer Vision",
     show: false,  // ← flip to true to display on the Projects page
   },
+  {
+    title: "Sanchalak---Agentic-Browser-Extension",
+    description: "Sanchalak---Agentic-Browser-Extension — a public GitHub project.",
+    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&h=300&fit=crop&auto=format",
+    technologies: ["GitHub"],
+    github: "https://github.com/KillerStrike17/Sanchalak---Agentic-Browser-Extension",
+    category: "Other",
+    show: false,  // ← flip to true to display on the Projects page
+  },
   // ── Add more projects below. Copy a block above, set show: true to display ──
 ];
